@@ -4,31 +4,29 @@ import { Link } from 'react-router-dom';
 import style from './Dashboard.module.css';
 
 function Dashboard() {
-	const [allProducts, setAllProducts] = useState([]);
+	const [allProducts, setAllProducts] = useState({products:[]});
 
-	const getData = async function(){
+	const getData = function(){
 		if(localStorage.length > 0){
-			if(allProducts.length == 0){
+			if(allProducts.products.length == 0){
 				let localElem = localStorage.getItem('storage');
         		localElem = JSON.parse(localElem);
 				setAllProducts(localElem);
 			}
 		}else{
-			await fetch('https://fakestoreapi.com/products')
+			fetch('https://dummyjson.com/products?skip=0&limit=100')
         	    .then(res=>res.json())
         	    .then(dataJSON=> {
 						localStorage.setItem('storage', JSON.stringify(dataJSON))
 						let localElem = localStorage.getItem('storage');
         				localElem = JSON.parse(localElem);
 						setAllProducts(localElem);
-					}
-				)
-			}
+				})
+		}
 	};
 
 	useEffect(()=>{
-		getData()
-		console.log(allProducts.length);
+		getData();
 	})
 
 	return (
@@ -37,17 +35,18 @@ function Dashboard() {
 		    <h1>New products</h1>
 		
 			<ul className={style.product__list}>
-				{allProducts.map((item, index)=>{
+				{allProducts.products.map((item, index)=>{
 					return(
 						<li key={index} className={style.product__item}>
 							<Link to="/product">
-								<h2>{item.title}</h2>
-								{/* <img src={item.image} alt="#" /> */}
+								<h2>{item.id}</h2>
+								<p>{item.title}</p>
+								<img src={item.images[0]} alt="" />
 							</Link>
 						</li>
-				);
+					);
 				})}
-			</ul>
+			</ul>	
 		</div>
 	);
 
