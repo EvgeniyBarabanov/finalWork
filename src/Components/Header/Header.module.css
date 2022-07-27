@@ -1,0 +1,8 @@
+.block{
+    background-color: aqua;
+    display: flex;
+}
+
+.logo img{
+    height: 100px;
+}

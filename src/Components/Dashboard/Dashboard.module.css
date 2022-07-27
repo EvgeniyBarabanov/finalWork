@@ -1,0 +1,13 @@
+.dashboard{
+    background-color: rgb(189, 189, 189);
+    outline: 1px solid black;
+}
+
+.product__list{
+    display: flex;
+    flex-direction: column;
+}
+
+.product__item a{
+    display: block;
+}
