@@ -1,24 +1,26 @@
 import { Routes, Route } from 'react-router-dom';
 
 import Dashboard from './Dashboard/Dashboard';
-import MensClothing from './MensClothing/MensClothing';
-import Jewelery from './Jewelery/Jewelery';
-import Electronics from './Electronics/Electronics';
-import WomenClothing from './WomenClothing/WomenClothing';
-import Product from './Product/Product';
-import Cart from './Cart/Cart';
+import RulesPay from './RulesPay/RulesPay';
+import Sale from './Sale/Sale';
+import Prices from './Prices/Prices';
+import Help from './Help/Help';
+import Bonuses from './Bonuses/Bonuses';
+import Blog from './Blog/Blog';
+import Stores from './Stores/Stores';
 
 function Main() {
 	return (
 	<main className="main">
 	    <Routes>
 			<Route path='/' element={<Dashboard />} />
-			<Route path='/mensClothing' element={<MensClothing />} />
-			<Route path='/jewelery' element={<Jewelery />} />
-			<Route path='/electronics' element={<Electronics />} />
-			<Route path='/womenClothing' element={<WomenClothing />} />
-			<Route path='/product' element={< Product/>} />
-			<Route path='/cart' element={<Cart />} />
+			<Route path='/rulesPay' element={<RulesPay />} />
+			<Route path='/sale' element={<Sale />} />
+			<Route path='/prices' element={<Prices />} />
+			<Route path='/help' element={<Help />} />
+			<Route path='/bonuses' element={< Bonuses/>} />
+			<Route path='/blog' element={<Blog />} />
+			<Route path='/stores' element={<Stores />} />
 		</Routes>
 	</main>
 	);

@@ -1,3 +1,46 @@
 .block{
-    background-color: aquamarine;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.list{
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: bold;
+    border: 0; 
+}
+
+.list a{
+    text-decoration: none;
+    color: #1F2428;
+}
+.user{
+    display: flex;
+    gap: 20px;
+}
+
+.logIn{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+    border: 0;
+    background-color: #fff;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.contact_btn{
+    border: 0;
+    background-color: #00C97B;
+    color: #fff;
+    border-radius: 36px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
 }
