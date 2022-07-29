@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import style from './Dashboard.module.css';
@@ -7,6 +7,8 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Dashboard() {
 	const [allProducts, setAllProducts] = useState({products:[]});
+
+	const transform = useRef();
 
 	const getData = function(){
 		if(localStorage.length > 0){
@@ -26,6 +28,32 @@ function Dashboard() {
 				})
 		}
 	};
+
+	const productCategory = function(productCategory){
+		let productTmp = []
+		productCategory.products.map((item)=>{
+			if(!productTmp.includes(item.category)){
+				productTmp.push(item.category)
+			}
+		});
+		return productTmp;
+	}
+
+	const cnahgeSlide = function(){
+		let slide = transform.current.style.transform;
+
+		if(!slide) slide = 0;
+		else slide = Math.abs(slide.replace('translateX(','').replace('%)', ''));
+	
+		slide += 100;
+
+		let stop = (transform.current.children.length * 100) - 100;
+
+		if (slide > stop) slide = 0
+		console.log(stop);
+
+		transform.current.style = `transform: translateX(-${slide}%);`;
+	}
 
 	useEffect(()=>{
 		getData();
@@ -53,18 +81,21 @@ function Dashboard() {
 				<div className="container">
 					<div>
 						<h3>Насколько выгодно у нас покупать?</h3>
-						<ul className={style.buy__product_list}>
-						{allProducts.products.map((item, index)=>{
-							return(
-								<li key={index} className={style.buy__product_item}>
-									<Link to="/product">
-										<p>{item.category}</p>
-									</Link>
-								</li>
-							);
-						})}
-					</ul>
+						<div className={style.sliderCategory}>
+							<ul ref={transform} className={style.sliderCategory_list}>
+								{productCategory(allProducts).map((item, index)=>{
+									return(
+										<li key={index} className={style.buy__product_item}>
+											<button className={style.butt}>{item}</button>
+										</li>
+									);
+								})}
+							</ul>
+							<button onClick={cnahgeSlide} className={style.btn_prew}><img src={PUBLIC_URL + '/images/arrowLeft.png'} alt="#" /></button>
+							<button onClick={cnahgeSlide} className={style.btn_next}><img src={PUBLIC_URL + '/images/arrowRight.png'} alt="#" /></button>
+						</div>
 					</div>
+					
 				</div>
 			</section>
 
@@ -78,6 +109,17 @@ function Dashboard() {
 export default Dashboard;
 
 
+{/* <ul className={style.buy__product_list}>
+						{allProducts.products.map((item, index)=>{
+							return(
+								<li key={index} className={style.buy__product_item}>
+									<Link to="/product">
+										<p>{item.category}</p>
+									</Link>
+								</li>
+							);
+						})}
+</ul> */}
 
 
 {/* <ul className={style.product__list}>
