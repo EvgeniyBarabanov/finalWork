@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 
+import SelectCategory from "../SelectCategory/SelectCategory";
 import style from './Dashboard.module.css';
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -29,9 +30,9 @@ function Dashboard() {
 		}
 	};
 
-	const productCategory = function(productCategory){
-		let productTmp = []
-		productCategory.products.map((item)=>{
+	const productCategory = function(allProducts){
+		let productTmp = [];
+		allProducts.products.map((item)=>{
 			if(!productTmp.includes(item.category)){
 				productTmp.push(item.category)
 			}
@@ -39,18 +40,24 @@ function Dashboard() {
 		return productTmp;
 	}
 
-	const cnahgeSlide = function(){
+	const changeSlide = function(event){
+		let dir = event.target.parentNode.id
+
 		let slide = transform.current.style.transform;
 
 		if(!slide) slide = 0;
 		else slide = Math.abs(slide.replace('translateX(','').replace('%)', ''));
-	
-		slide += 100;
+		
+		if(dir == "next") slide += 12.5;
+		else slide -= 12.5;
 
-		let stop = (transform.current.children.length * 100) - 100;
+		let stop = (transform.current.children.length * 12.5) - 100;
 
-		if (slide > stop) slide = 0
-		console.log(stop);
+		if (slide > stop) slide = 0;
+
+		if(dir == "prew" && slide < 0){
+			slide = stop;
+		}
 
 		transform.current.style = `transform: translateX(-${slide}%);`;
 	}
@@ -58,6 +65,10 @@ function Dashboard() {
 	useEffect(()=>{
 		getData();
 	})
+
+	const selectCategory = function(event){
+		console.log(event.target.tagName)
+	}
 
 	return (
 		<div className={style.dashboard}>
@@ -82,18 +93,30 @@ function Dashboard() {
 					<div>
 						<h3>Насколько выгодно у нас покупать?</h3>
 						<div className={style.sliderCategory}>
-							<ul ref={transform} className={style.sliderCategory_list}>
-								{productCategory(allProducts).map((item, index)=>{
-									return(
-										<li key={index} className={style.buy__product_item}>
-											<button className={style.butt}>{item}</button>
-										</li>
-									);
-								})}
-							</ul>
-							<button onClick={cnahgeSlide} className={style.btn_prew}><img src={PUBLIC_URL + '/images/arrowLeft.png'} alt="#" /></button>
-							<button onClick={cnahgeSlide} className={style.btn_next}><img src={PUBLIC_URL + '/images/arrowRight.png'} alt="#" /></button>
+							<div className={style.sliderCategory_wrapper}>
+								<ul ref={transform} className={style.sliderCategory_list}>
+									{productCategory(allProducts).map((categories, index)=>{
+										let result = allProducts.products.find(item=> item.category == categories)
+										return(
+											<li key={index} className={style.buy__product_item}>
+												<Link to="/selectCategoru" onClick={selectCategory} className={style.selectCategory}>
+													<img className={style.imageCategory} src={result.images[0]} alt="#" />
+													<p>{categories}</p>
+												</Link>
+											</li>
+										);
+									})}
+								</ul>
+							</div>
+							<button id='prew' onClick={changeSlide} className={style.btn_prew}><img src={PUBLIC_URL + '/images/arrowLeft.png'} alt="#" /></button>
+							<button id='next' onClick={changeSlide} className={style.btn_next}><img src={PUBLIC_URL + '/images/arrowRight.png'} alt="#" /></button>
 						</div>
+					</div>
+
+					<div className={style.product}>
+						<Routes>
+							<Route path='/SelectCategory' element={<SelectCategory />} />
+						</Routes>
 					</div>
 					
 				</div>
@@ -107,32 +130,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-
-{/* <ul className={style.buy__product_list}>
-						{allProducts.products.map((item, index)=>{
-							return(
-								<li key={index} className={style.buy__product_item}>
-									<Link to="/product">
-										<p>{item.category}</p>
-									</Link>
-								</li>
-							);
-						})}
-</ul> */}
-
-
-{/* <ul className={style.product__list}>
-						{allProducts.products.map((item, index)=>{
-							return(
-								<li key={index} className={style.product__item}>
-									<Link to="/product">
-										<h2>{item.id}</h2>
-										<p>{item.title}</p>
-										<img src={item.images[0]} alt="" />
-										<p>{item.category}</p>
-									</Link>
-								</li>
-							);
-						})}
-					</ul>	 */}
