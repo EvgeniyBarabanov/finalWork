@@ -9,11 +9,12 @@ import Bonuses from './Bonuses/Bonuses';
 import Blog from './Blog/Blog';
 import Stores from './Stores/Stores';
 
+
 function Main() {
 	return (
 	<main className="main">
 	    <Routes>
-			<Route path='/' element={<Dashboard />} />
+			<Route path='*' element={<Dashboard />} />
 			<Route path='/rulesPay' element={<RulesPay />} />
 			<Route path='/sale' element={<Sale />} />
 			<Route path='/prices' element={<Prices />} />

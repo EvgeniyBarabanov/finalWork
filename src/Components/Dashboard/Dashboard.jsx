@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { createContext, useEffect, useRef, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-
-import SelectCategory from "../SelectCategory/SelectCategory";
+import SelectCategory from '../SelectCategory/SelectCategory';
 import style from './Dashboard.module.css';
 
+export const MainContext = createContext();
+
 const PUBLIC_URL = process.env.PUBLIC_URL;
+
 
 function Dashboard() {
 	const [allProducts, setAllProducts] = useState({products:[]});
@@ -13,7 +15,7 @@ function Dashboard() {
 
 	const getData = function(){
 		if(localStorage.length > 0){
-			if(allProducts.products.length == 0){
+			if(allProducts.products.length === 0){
 				let localElem = localStorage.getItem('storage');
         		localElem = JSON.parse(localElem);
 				setAllProducts(localElem);
@@ -48,14 +50,14 @@ function Dashboard() {
 		if(!slide) slide = 0;
 		else slide = Math.abs(slide.replace('translateX(','').replace('%)', ''));
 		
-		if(dir == "next") slide += 12.5;
+		if(dir === "next") slide += 12.5;
 		else slide -= 12.5;
 
 		let stop = (transform.current.children.length * 12.5) - 100;
 
 		if (slide > stop) slide = 0;
 
-		if(dir == "prew" && slide < 0){
+		if(dir === "prew" && slide < 0){
 			slide = stop;
 		}
 
@@ -65,10 +67,6 @@ function Dashboard() {
 	useEffect(()=>{
 		getData();
 	})
-
-	const selectCategory = function(event){
-		console.log(event.target.tagName)
-	}
 
 	return (
 		<div className={style.dashboard}>
@@ -96,10 +94,10 @@ function Dashboard() {
 							<div className={style.sliderCategory_wrapper}>
 								<ul ref={transform} className={style.sliderCategory_list}>
 									{productCategory(allProducts).map((categories, index)=>{
-										let result = allProducts.products.find(item=> item.category == categories)
+										let result = allProducts.products.find(item=> item.category === categories)
 										return(
 											<li key={index} className={style.buy__product_item}>
-												<Link to="/selectCategoru" onClick={selectCategory} className={style.selectCategory}>
+												<Link to={'/' + categories}  className={style.selectCategory}>
 													<img className={style.imageCategory} src={result.images[0]} alt="#" />
 													<p>{categories}</p>
 												</Link>
@@ -112,13 +110,17 @@ function Dashboard() {
 							<button id='next' onClick={changeSlide} className={style.btn_next}><img src={PUBLIC_URL + '/images/arrowRight.png'} alt="#" /></button>
 						</div>
 					</div>
-
-					<div className={style.product}>
-						<Routes>
-							<Route path='/SelectCategory' element={<SelectCategory />} />
-						</Routes>
+					<div>
+						<MainContext.Provider value={ {allProducts} }>
+							<Routes>
+								{productCategory(allProducts).map((categories, index)=>{
+									return(
+										<Route key={index} path={'/' + categories} element={<SelectCategory category={categories} />} />
+									)
+								})}
+							</Routes>
+						</MainContext.Provider>
 					</div>
-					
 				</div>
 			</section>
 
