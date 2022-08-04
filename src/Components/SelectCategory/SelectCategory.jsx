@@ -9,33 +9,22 @@ function SelectCategory(props) {
 	const {allProducts} = useContext(MainContext);
 
 	const transform = useRef();
-
+	
 	const changeSlide = function(event){
-		let dir = event.target.parentNode.id
-		
-		let slide = transform.current.style.transform;
-		
-		if(!slide) slide = 0;
-		else slide = Math.abs(slide.replace('translateX(','').replace('px)', ''));
-		
-		if(dir === "next") slide += 200;
-		else slide -= 200;
-
-		let stop = (transform.current.children.length * 100) - 100;
-		
-		if (slide > stop) slide = 0;
-
-		if(dir === "prew" && slide < 0){
-			slide = stop;
+		let dir = event.target.parentNode.id;
+		if(dir === "next"){
+			let firstChild = transform.current.firstChild;
+			transform.current.append(firstChild);
+		}else{
+			let lastChild = transform.current.lastChild;
+			transform.current.prepend(lastChild);
 		}
-
-		transform.current.style = `transform: translateX(-${slide}px);`;
 	}
 
 	return (
 	<div className="selectCategory">
 		<div className="container">
-	    	<h2>{props.category}</h2>
+	    	{/* <h2>{props.category}</h2> */}
 			<div className={style.sliderProduct}>
 				<div className={style.sliderProduct__wrapper}>
 					<ul ref={transform} className={style.sliderProduct__list}>
