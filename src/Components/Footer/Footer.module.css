@@ -1,3 +1,7 @@
+.footer{
+    margin-top: 50px;
+}
+
 .footer__subsubscription{
     height: 250px;
     padding: 0% 10%;
@@ -50,7 +54,6 @@ li{
 
 .footer__list>li{
     width: 25%;
-    /* padding: 10px; */
 }
 
 .footer__list a{

@@ -8,6 +8,8 @@ import Help from './Help/Help';
 import Bonuses from './Bonuses/Bonuses';
 import Blog from './Blog/Blog';
 import Stores from './Stores/Stores';
+import Login from './Login/Login';
+import Registration from './Registration/Registration';
 
 
 function Main() {
@@ -22,6 +24,8 @@ function Main() {
 			<Route path='/bonuses' element={< Bonuses/>} />
 			<Route path='/blog' element={<Blog />} />
 			<Route path='/stores' element={<Stores />} />
+			<Route path='/login' element={<Login />} />
+			<Route path='/registration' element={<Registration />} />
 		</Routes>
 	</main>
 	);

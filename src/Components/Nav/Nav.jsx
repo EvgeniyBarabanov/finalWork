@@ -21,7 +21,7 @@ function Nav() {
 			<li><Link to="/stores">Магазины</Link></li>	
 		</ul>
 		<div className={style.user}>
-			<button className={style.logIn}><img src={PUBLIC_URL + '/images/userLogo.png'} alt="#" /> Вход</button>
+			<Link to="/login" className={style.logIn}><img src={PUBLIC_URL + '/images/userLogo.png'} alt="#" /> Вход</Link>
 			<button className={style.contact_btn}>Связаться с нами</button>
 		</div>
 	</nav>

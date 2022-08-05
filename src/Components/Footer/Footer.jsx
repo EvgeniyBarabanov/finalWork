@@ -5,7 +5,7 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Footer(){
     return (
-        <footer className="footer">
+        <footer className={style.footer}>
             <div className="container">
                 <div className={style.footer__subsubscription}>
                     <p>Подпишитеть и будьте в курсе всех скидок и акций магазинов Великобритании!</p>

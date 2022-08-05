@@ -1,0 +1,93 @@
+.login{
+    background-color: #1f242827;
+    padding: 20px 0;
+}
+.login__form{
+    font-weight: bold;
+    width: 400px;
+    height: 450px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.511),
+                -5px 0px 15px rgba(0, 0, 0, 0.511);
+}
+
+.login__form h2{
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.form__field{
+    margin-top: 40px;
+}
+
+.form__field input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid hsla(0, 0%, 0%, 0.500);
+    border-radius: 6px;
+}
+
+.login__pswrd{
+    font-size: 13px;
+    display: flex;
+    margin: 12px 0;
+    justify-content: space-between;
+}
+
+.login__pswrdRecovery,
+.login__pswrdQuickRegistration{
+    color: #00C97B;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.login__pswrdRecovery:hover,
+.login__pswrdQuickRegistration:hover{
+    text-decoration-line: underline;
+}
+
+.login__pswrdRecovery{
+    font-weight: bold;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.login__pswrdQuickRegistration{
+    text-decoration: none;
+}
+
+.login__btns{
+    display: flex;
+}
+
+.form__sendBtn{
+    border: 0;
+    background-color: #00C97B;
+    color: #fff;
+    border-radius: 36px;
+    padding: 20px 60px;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.anotherLogin{
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.anotherLogin>button{
+    border: 0;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.anotherLogin>button:not(:last-child){
+    margin-right: 5px;
+}
