@@ -1,13 +1,12 @@
 .block{
     display: flex;
     justify-content: space-around;
-    align-items: center;
 }
 
 .list{
     display: flex;
     list-style-type: none;
-    gap: 20px;
+    gap: 10px;
     font-size: 15px;
     line-height: 16px;
     font-weight: bold;
@@ -15,16 +14,22 @@
 }
 
 .list a{
+    font-weight: bold;
     text-decoration: none;
     color: #1F2428;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 5px;
 }
 .user{
     display: flex;
-    gap: 20px;
 }
 
 .logIn{
     display: flex;
+    color: black;
+    text-decoration: none;
     align-items: center;
     font-weight: bold;
     font-size: 15px;
@@ -32,6 +37,7 @@
     background-color: #fff;
     gap: 10px;
     cursor: pointer;
+    margin-right: 15px;
 }
 
 .contact_btn{

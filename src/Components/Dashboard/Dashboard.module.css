@@ -1,5 +1,5 @@
 .delivery_info{
-    height: 550px;
+    height: 500px;
     padding: 0% 10%;
     margin-bottom: 100px;
     border-radius: 36px;
@@ -19,6 +19,10 @@
 
 .delivery_info_description h2{
     font-size: 50px;
+}
+
+.delivery_info_description p{
+    line-height: 40px;
 }
 
 .delivery_info_description button{
@@ -75,6 +79,9 @@
     padding: 20px;
     height: 100%;
     border: 0;
+    text-decoration: none;
+    color: black;
+    text-align: center;
 }
 
 .selectCategory:hover{
@@ -113,4 +120,28 @@
 
 .btn_prew{
     left: -50px;
+}
+
+@media(max-width: 1280px){
+    .delivery_info{
+        height: 450px;
+    }
+
+    .delivery_info_description h2{
+        font-size: 40px;
+    }
+
+    .delivery_info_description p{
+        line-height: 30px;
+    }
+
+    .delivery_info_image img{
+        height: 400px;
+    }
+}
+
+@media(max-width:1152px){
+    .sliderCategory{
+        width: 850px;
+    }
 }

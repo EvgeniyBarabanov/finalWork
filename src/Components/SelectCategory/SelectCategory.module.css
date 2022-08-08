@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
 .sliderProduct{
     margin: 0 auto;
     width: 1000px;
+    height: 600px;
     position: relative;
     margin-bottom: 50px;
 }
 
 .sliderProduct__wrapper{
     overflow: hidden;
+    height: 100%;
 }
 
 .sliderProduct__list{
@@ -29,6 +33,7 @@
 .sliderProduct__item:nth-child(2){
     width: 60%;
     font-size: 25px;
+    align-self: flex-start;
 }
 
 .sliderProduct__item:nth-child(2)>img{
@@ -37,6 +42,82 @@
 
 .image{
     width: 100px;
+    margin-top: 20px;
+
+}
+
+.prewSlide:nth-child(1),
+.prewSlide:nth-child(3){
+    animation-name: prewSlide;
+    animation-duration: 1s;
+}
+
+@keyframes prewSlide{
+    from{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.nextSlide:nth-child(1),
+.nextSlide:nth-child(3){
+    animation-name: nextSlide;
+    animation-duration: 1s;
+}
+
+@keyframes nextSlide{
+    from{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.nextSlide:nth-child(2){
+    animation-name: nSlide;
+    animation-duration: 1s;
+}
+
+@keyframes nSlide{
+    from{
+        transform: translateX(500px);
+        opacity: 0.5;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.prewSlide:nth-child(2){
+    animation-name: pSlide;
+    animation-duration: 1s;
+}
+
+@keyframes pSlide{
+    from{
+        transform: translateX(-500px);
+        opacity: 0.5;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.sliderProduct__item:nth-child(2) span{
+    font-family: 'Patrick Hand', cursive;
+    text-transform: lowercase;
+    text-align: justify;
+    width: 400px;
+    padding: 10px;
 }
 
 .btn_prew,
@@ -62,4 +143,10 @@
 
 .btn_prew{
     left: 250px;
+}
+
+@media(max-width:1280px){
+    .sliderProduct{
+        height: 480px;
+    }
 }

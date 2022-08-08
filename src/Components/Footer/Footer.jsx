@@ -9,7 +9,7 @@ function Footer(){
             <div className="container">
                 <div className={style.footer__subsubscription}>
                     <p>Подпишитеть и будьте в курсе всех скидок и акций магазинов Великобритании!</p>
-                    <div>
+                    <div className={style.footer__subsubscription_email}>
                         <p><img src={PUBLIC_URL + '/images/email_icon.png'} alt="#" />Введите ваш Email</p>
                         <input type="email" name="email" />
                     </div>

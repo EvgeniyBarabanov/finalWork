@@ -16,13 +16,26 @@
 
 .footer__subsubscription>p{
     width: 30%;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.footer__subsubscription_email{
+    width: 40%;
+}
+
+.footer__subsubscription_email img{
+    transform: translateY(5px);
 }
 
 .footer__subsubscription input{
+    margin-top: 5px;
     width: 100%;
     border: 0;
     border-bottom: 1px solid #fff;
     background-color: transparent;
+    color: #fff;
+    font-size: 20px;
 }
 
 .footer__subsubscription button{
@@ -47,7 +60,7 @@ li{
 }
 
 .footer__list{
-    width: 85%;
+    width: 90%;
     display: flex;
     margin: 70px auto 0 auto;
 }
@@ -89,3 +102,4 @@ hr{
     text-align: center;
     font-size: 13px;
 }
+

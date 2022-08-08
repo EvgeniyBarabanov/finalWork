@@ -15,16 +15,23 @@ function SelectCategory(props) {
 		if(dir === "next"){
 			let firstChild = transform.current.firstChild;
 			transform.current.append(firstChild);
+			for (let child of transform.current.children){
+				child.classList.remove(style.prewSlide);
+				child.classList.add(style.nextSlide);
+			}
 		}else{
 			let lastChild = transform.current.lastChild;
 			transform.current.prepend(lastChild);
+			for (let child of transform.current.children){
+				child.classList.remove(style.nextSlide);
+				child.classList.add(style.prewSlide)
+			}
 		}
 	}
 
 	return (
 	<div className="selectCategory">
 		<div className="container">
-	    	{/* <h2>{props.category}</h2> */}
 			<div className={style.sliderProduct}>
 				<div className={style.sliderProduct__wrapper}>
 					<ul ref={transform} className={style.sliderProduct__list}>
@@ -34,7 +41,8 @@ function SelectCategory(props) {
 									<li key={index} className={style.sliderProduct__item}>
 										<p>{item.title}</p>
 										<img  className={style.image} src={item.images[0]} alt="#" />
-										<p>{item.rating}</p>
+										<progress value={item.rating} max='5'>chlin</progress>
+										<span>{item.description}</span>
 									</li>
 								)
 							}

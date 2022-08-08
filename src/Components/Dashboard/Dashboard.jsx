@@ -89,7 +89,7 @@ function Dashboard() {
 			<section className={style.buy}>
 				<div className="container">
 					<div>
-						<h3>Насколько выгодно у нас покупать?</h3>
+						<h3>Насколько выгодно покупать?</h3>
 						<div className={style.sliderCategory}>
 							<div className={style.sliderCategory_wrapper}>
 								<ul ref={transform} className={style.sliderCategory_list}>
