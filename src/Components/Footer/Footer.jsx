@@ -5,20 +5,20 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Footer(){
     return (
-        <footer className={style.footer}>
+        <footer className={style.block}>
             <div className="container">
-                <div className={style.footer__subsubscription}>
+                <div className={style.block__subsubscription}>
                     <p>Подпишитеть и будьте в курсе всех скидок и акций магазинов Великобритании!</p>
-                    <div className={style.footer__subsubscription_email}>
+                    <div className={style.block__subsubscription_email}>
                         <p><img src={PUBLIC_URL + '/images/email_icon.png'} alt="#" />Введите ваш Email</p>
                         <input type="email" name="email" />
                     </div>
                     <button>Подписаться</button>
                 </div>
                 <div>
-                    <ul className={style.footer__list}>
+                    <ul className={style.block__list}>
                         <li>
-                            <ul className={style.footer__list_messengers}>
+                            <ul className={style.block__list_messengers}>
                                 <li><a href="/"><img src={PUBLIC_URL + '/images/logo.png'} alt="#" /></a></li>
                                 <li><a href="/"><img src={PUBLIC_URL + '/images/WS_icon.png'} alt="#" /></a></li>
                                 <li><a href="/"><img src={PUBLIC_URL + '/images/VB_icon.png'} alt="#" /></a></li>
@@ -57,7 +57,7 @@ function Footer(){
                         </li>
                     </ul>
                     <hr />
-                    <p className={style.footer__copyright}>© 2021 Okeypost . Все права защищены.</p>
+                    <p className={style.block__copyright}>© 2021 Okeypost . Все права защищены.</p>
                 </div>
             </div>
         </footer>

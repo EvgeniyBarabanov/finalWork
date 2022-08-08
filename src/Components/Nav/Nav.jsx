@@ -6,6 +6,7 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 function Nav() {
 	return (
 	<nav className={style.block}>
+		<button className={style.block__burgerBtn}></button>
 		<div className={style.logo}>
         	    <a href="/">
         	        <img src={PUBLIC_URL + '/images/logo.png'} alt="#" />
