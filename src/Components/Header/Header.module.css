@@ -1,3 +1,10 @@
 .block{
     margin:35px 0 50px 0;
 }
+@media(max-width:1024px) {
+    .block{
+        position: sticky;
+        top: 0px;
+        z-index: 2;
+    }
+}

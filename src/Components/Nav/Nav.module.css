@@ -1,22 +1,17 @@
 .block{
     display: flex;
     justify-content: space-around;
+    background-color: #fff;
 }
 
 .block__burgerBtn{
     display: none;
     border: 0;
     background: none;
+    cursor: pointer;
 }
 
-.block__burgerBtn::before{
-    content: "Menu";
-    font-weight: bold;
-    color: #000;
-    font-size: 15px;
-}
-
-.list{
+.block__list{
     display: flex;
     list-style-type: none;
     gap: 10px;
@@ -26,7 +21,7 @@
     border: 0; 
 }
 
-.list a{
+.block__list a{
     font-weight: bold;
     text-decoration: none;
     color: #1F2428;
@@ -35,11 +30,12 @@
     height: 100%;
     padding: 0 5px;
 }
-.user{
+
+.block__user{
     display: flex;
 }
 
-.logIn{
+.block__logIn{
     display: flex;
     color: black;
     text-decoration: none;
@@ -53,7 +49,7 @@
     margin-right: 15px;
 }
 
-.contact_btn{
+.block__contact_btn{
     border: 0;
     background-color: #00C97B;
     color: #fff;
@@ -67,9 +63,38 @@
 @media(max-width:1024px){
     .block__burgerBtn{
         display: block;
+        position: absolute;
     }
 
-    .list{
-        display: none;
+    .block__list{
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: -300px;
+        transform: translateX(0px);
+        transition: transform ease-in-out 1s;
     }
+
+    .visibilityMenu{
+        transform: translateX(300px);
+    }
+
+    .block__list>li{
+        width: 250px;
+    }
+
+    .block__list>li:active{
+        box-shadow: inset 2px 2px 5px #000,
+                    inset -2px -2px 5px #000;
+    }
+
+    .block__list a{
+        padding: 20px;
+        display: block;
+        text-align: center;
+    }
+    
 }
