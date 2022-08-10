@@ -3,32 +3,37 @@
 }
 
 .block__subsubscription{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 250px;
-    padding: 0% 10%;
-    margin-bottom: 100px;
     border-radius: 36px;
     background: linear-gradient(90deg, #5B52A3, #40B8EA);
+}
+
+.block__subsubscription_wrapper{
+    width: 80%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: #fff;
 }
 
-.block__subsubscription>p{
-    width: 30%;
+.block__subsubscription_wrapper>p{
+    flex-basis: 30%;
     font-weight: bold;
     line-height: 30px;
 }
 
 .block__subsubscription_email{
-    width: 40%;
+    flex-basis: 40%;
 }
 
 .block__subsubscription_email img{
-    transform: translateY(5px);
+    transform: translateY(4px);
 }
 
-.block__subsubscription input{
+.block__subsubscription_wrapper input{
     margin-top: 5px;
     width: 100%;
     border: 0;
@@ -38,12 +43,12 @@
     font-size: 20px;
 }
 
-.block__subsubscription button{
+.block__subsubscription_wrapper button{
     border: 0;
     background-color: #00C97B;
     color: #fff;
     border-radius: 36px;
-    padding: 10px 20px;
+    padding: 20px 30px;
     font-weight: bold;
     font-size: 13px;
     cursor: pointer;
@@ -61,7 +66,6 @@
 .block__list{
     width: 95%;
     display: flex;
-    flex-wrap: wrap;
     margin: 70px auto 0 auto;
 }
 
@@ -107,5 +111,95 @@ hr{
 @media(max-width:1152px){
     .block__list>li{
         font-size: 14px;
+    }   
+}
+
+@media(max-width:1024px){
+    .block__list>li{
+        flex: 0 0 25%;
+        padding: 0px;
+    }    
+}
+
+@media(max-width:800px){
+    .block__subsubscription{
+        height: 200px;
+    }
+    
+    .block__subsubscription_wrapper>p{
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .block__subsubscription_email,
+    .block__subsubscription_email input{
+        font-size: 15px;
+    }
+
+    .block__subsubscription_wrapper button{
+        padding: 15px 20px;
+    }
+
+    .block__list{
+        flex-wrap: wrap;
+    }
+
+    .block__list>li{
+        flex: 0 0 33%;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .block__list>li:nth-child(1){
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    .block__list_messengers{
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .block__subsubscription{
+        height: 150px;
+    }
+}
+
+@media(max-width:425px){
+    .block__subsubscription_wrapper{
+        flex-direction: column;
+    }
+
+    .block__subsubscription_wrapper>p,
+    .block__subsubscription_email,
+    .block__subsubscription_email input{
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .block__subsubscription_wrapper button{
+        margin-top: 10px;
+        padding: 10px 20px;
+    }
+
+    .block__list{
+        flex-direction: column;
+    }
+
+    .block__list>li{
+        margin-top: 10px;
+    }
+    .block__list>li>ul li{
+        margin-top: 10px;
+    }
+}
+
+@media(max-width:375px){
+    .block__subsubscription{
+        height: 180px;
+    }
+
+    .block__list{
+        margin: 30px auto 0 auto;
     }
 }

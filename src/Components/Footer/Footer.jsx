@@ -8,12 +8,14 @@ function Footer(){
         <footer className={style.block}>
             <div className="container">
                 <div className={style.block__subsubscription}>
-                    <p>Подпишитеть и будьте в курсе всех скидок и акций магазинов Великобритании!</p>
-                    <div className={style.block__subsubscription_email}>
-                        <p><img src={PUBLIC_URL + '/images/email_icon.png'} alt="#" />Введите ваш Email</p>
-                        <input type="email" name="email" />
+                    <div className={style.block__subsubscription_wrapper}>
+                        <p>Подпишитеть и будьте в курсе всех скидок и акций магазинов Великобритании!</p>
+                        <div className={style.block__subsubscription_email}>
+                            <p><img src={PUBLIC_URL + '/images/email_icon.png'} alt="#" />Введите ваш Email</p>
+                            <input type="email" name="email" />
+                        </div>
+                        <button>Подписаться</button>
                     </div>
-                    <button>Подписаться</button>
                 </div>
                 <div>
                     <ul className={style.block__list}>

@@ -43,25 +43,22 @@ function Dashboard() {
 	}
 
 	const changeSlide = function(event){
-		let dir = event.target.parentNode.id
-
-		let slide = transform.current.style.transform;
-
-		if(!slide) slide = 0;
-		else slide = Math.abs(slide.replace('translateX(','').replace('%)', ''));
-		
-		if(dir === "next") slide += 12.5;
-		else slide -= 12.5;
-
-		let stop = (transform.current.children.length * 12.5) - 100;
-
-		if (slide > stop) slide = 0;
-
-		if(dir === "prew" && slide < 0){
-			slide = stop;
+		let dir = event.target.parentNode.id;
+		if(dir === "next"){
+			let firstChild = transform.current.firstChild;
+			transform.current.append(firstChild);
+			/* for (let child of transform.current.children){
+				child.classList.remove(style.prewSlide);
+				child.classList.add(style.nextSlide);
+			} */
+		}else{
+			let lastChild = transform.current.lastChild;
+			transform.current.prepend(lastChild);
+			/* for (let child of transform.current.children){
+				child.classList.remove(style.nextSlide);
+				child.classList.add(style.prewSlide)
+			} */
 		}
-
-		transform.current.style = `transform: translateX(-${slide}%);`;
 	}
 
 	useEffect(()=>{
