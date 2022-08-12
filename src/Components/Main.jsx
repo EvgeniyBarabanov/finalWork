@@ -10,7 +10,7 @@ import Blog from './Blog/Blog';
 import Stores from './Stores/Stores';
 import Login from './Login/Login';
 import Registration from './Registration/Registration';
-
+import UserPage from './UserPage/UserPage';
 
 function Main() {
 	return (
@@ -26,6 +26,7 @@ function Main() {
 			<Route path='/stores' element={<Stores />} />
 			<Route path='/login' element={<Login />} />
 			<Route path='/registration' element={<Registration />} />
+			<Route path='/myPage' element={<UserPage />} />
 		</Routes>
 	</main>
 	);

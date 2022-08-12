@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-around;
     background-color: #fff;
+    padding: 5px 0px;
 }
 
 .block__burgerBtn{

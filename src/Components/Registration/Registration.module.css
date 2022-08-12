@@ -1,8 +1,9 @@
-.login{
+.block{
     background-color: #1f242827;
     padding: 20px 0;
 }
-.login__form{
+
+.block__login_form{
     font-weight: bold;
     width: 400px;
     height: 650px;
@@ -14,20 +15,20 @@
                 -5px 0px 15px rgba(0, 0, 0, 0.511);
 }
 
-.login__form h2{
+.block__login_form h2{
     font-size: 24px;
     line-height: 32px;
 }
 
-.form__field{
+.block__login_form_field{
     margin-top: 40px;
 }
 
-.login__form p{
+.block__login_form p{
     margin-top: 20px;
 }
 
-.form__field input{
+.block__login_form_field input{
     width: 100%;
     padding: 10px;
     font-size: 20px;
@@ -35,7 +36,7 @@
     border-radius: 6px;
 }
 
-.registration__privacyPolicy{
+.block__login_form_registration_privacyPolicy{
     color: #00C97B;
     background-color: transparent;
     font-size: 13px;
@@ -43,12 +44,12 @@
     border: 0;
 }
 
-.registration__privacyPolicy:hover{
+.block__login_form_registration_privacyPolicy:hover{
     text-decoration-line: underline;
     cursor: pointer;
 }
 
-.form__registrationBtn{
+.block__login_form_registrationBtn{
     margin-top: 30px;
     width: 100%;
     border: 0;
