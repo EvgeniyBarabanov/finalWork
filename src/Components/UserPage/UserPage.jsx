@@ -2,9 +2,13 @@ import style from './UserPage.module.css'
 
 function UserPage(){
     return(
-        <div className={style.block}>
-            My page
-        </div>
+        <section className={style.block}>
+            <div className="container">
+                <div className={style.block__menu}>
+
+                </div>
+            </div>
+        </section>
     )
 }
 

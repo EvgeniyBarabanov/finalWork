@@ -10,6 +10,10 @@ function Login() {
         event.preventDefault();
     }
 
+    const logIn = function(){
+        
+    }
+
 	return (
 	<div className={style.login}>
         <div className="container">
@@ -29,7 +33,7 @@ function Login() {
                     <Link to="/registration" className={style.login__pswrdQuickRegistration}>быстрая регистрация</Link>
                 </div>
                 <div className={style.login__btns}>
-                    <button className={style.form__sendBtn}>Войти</button>
+                    <Link to='/myPage' className={style.form__sendBtn}>Войти</Link>
                     <div className={style.anotherLogin}>
                         <button onClick={preventDefault}><img src={PUBLIC_URL + '/images/google_icon.png'} alt="#" /></button>
                         <button onClick={preventDefault}><img src={PUBLIC_URL + '/images/FB_icon.png'} alt="#" /></button>

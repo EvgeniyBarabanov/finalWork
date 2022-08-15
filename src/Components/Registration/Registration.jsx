@@ -1,11 +1,13 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import style from './Registration.module.css';
 
 function Registration(){
 
     const userForm = useRef([]);
+    const emptyField = useRef();
+    const warning = useRef();
 
-    
+    const [userAdd, setUserAdd] = useState([]);
 
     const addUsers = function(event){
         event.preventDefault();
@@ -17,9 +19,32 @@ function Registration(){
             pswrd: formData.get('password')
         }
         
-        window.localStorage.setItem('userStorage', JSON.stringify(user));
-        console.log(localStorage.getItem('userStorage'));
+        if(user.name.length === 0 || user.phone.length === 0 || user.phone.length === 0){
+            emptyField.current.classList.add(style.block__emptyField)
+            return;
+        }
+        let userTest = userAdd.find(item => item.phone === user.phone);
+        if(userTest !== undefined){
+            warning.current.classList.remove(style.block__warning_none)
+            return;
+        }
+        const userAddTmp = userAdd;
+        userAddTmp.push(user);
+        setUserAdd([...userAddTmp]);
     }
+
+    useEffect(()=>{
+        let userLocal = localStorage.getItem('user');
+
+        if(userAdd.length === 0 && userLocal && userLocal.length > 0){
+            userLocal = JSON.parse(userLocal);
+
+            if(userLocal.length > 0) setUserAdd([...userLocal]);
+        }else{
+            userLocal = JSON.stringify(userAdd);
+            localStorage.setItem('user', userLocal);
+        }
+    })
 
     const preventDefault = function(event){
         event.preventDefault();
@@ -31,17 +56,19 @@ function Registration(){
         <div className="container">
 	        <form ref={userForm} className={style.block__login_form}>
                 <h2>Начните совершать покупки в английских магазинах</h2>
+                    <p ref={warning} className={style.block__warning_none}>Пользователь с таким номером уже зарегистрирован</p>
+                    <p ref={emptyField} className={style.block__emptyField_none}>Пожалуйста, заполните поля</p>  
                 <div className={style.block__login_form_field}>
                     <p>Имя:</p>
-                    <input type="text" name="firstName"/>
+                    <input required type="text" name="firstName"/>
                 </div>
                 <div className={style.block__login_form_field}>
                     <p>Номер телефона:</p>
-                    <input type="tel" name="phone"/>
+                    <input required type="tel" name="phone"/>
                 </div>
                 <div className={style.block__login_form_field}>
                     <p>Ваш пароль:</p>
-                    <input type="password" name="password"/>
+                    <input required type="password" name="password"/>
                 </div>
                 <p>Нажимая на кнопку вы соглашаетесь с <button onClick={preventDefault} className={style.block__login_form_registration_privacyPolicy}>правилами предоставления услуг и политикой конфиденциальности</button></p>
                 <div className={style.block__login_btns}>

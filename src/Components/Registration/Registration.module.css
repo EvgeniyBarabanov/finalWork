@@ -6,13 +6,38 @@
 .block__login_form{
     font-weight: bold;
     width: 400px;
-    height: 650px;
+    height: 700px;
     margin: 0 auto;
     padding: 50px 30px;
     background-color: #fff;
     border-radius: 16px;
     box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.511),
                 -5px 0px 15px rgba(0, 0, 0, 0.511);
+}
+
+.block__warning{
+    display: block;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.block__emptyField{
+    display: block;
+    position: absolute;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.block__emptyField_none{
+    display: none;
+}
+
+.block__warning_none{
+    display: none;
 }
 
 .block__login_form h2{
@@ -24,7 +49,7 @@
     margin-top: 40px;
 }
 
-.block__login_form p{
+.block__login_form_field p{
     margin-top: 20px;
 }
 
