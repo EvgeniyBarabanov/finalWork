@@ -3,4 +3,11 @@
     height: 100px;
     border-radius: 36px;
     background: linear-gradient(90deg, #5B52A3, #40B8EA);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.block__menu>:nth-child(5){
+    margin-left: 250px;
 }
