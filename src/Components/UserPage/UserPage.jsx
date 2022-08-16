@@ -3,49 +3,68 @@ import { useEffect, useState } from 'react';
 
 import style from './UserPage.module.css'
 
-let test = moment().format('MMMM Do YYYY, h:mm:ss a');
-
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 
 
 function UserPage(){
-
-    let [dateNow, setDateNow] = useState('');
-
+    
+    const [dateNow, setDateNow] = useState('')
+    
     useEffect(()=>{
-       /* window.setTimeout(() => { */
-        setDateNow(test)
-       /* }, 1000); */
+        window.setTimeout(() => {
+            setDateNow(moment().format('MMMM Do YYYY, h:mm:ss a'));
+        }, 1000);
     })
 
     return(
-        <section className={style.block}>
-            <div className="container">
-                <div className={style.block__menu}>
-                    <div className={style.block__menu_currentTime}>
-                        <img src={PUBLIC_URL + '/images/clock_icon.png'} alt="#" />
-                        <span>{dateNow}</span>
-                    </div>
-                    <div className={style.block__menu_exchangeRates}>
-                        <button><img src={PUBLIC_URL + '/images/bank_icon.png'} alt="#" />Курс валют</button>
-                    </div>
-                    <div className={style.block__menu_bonusAccount}>
-                        <button><img src={PUBLIC_URL + '/images/bonusAccont_icon.png'} alt="#" />Бонусный счет</button>
-                    </div>
-                    <div className={style.block__menu_balance}>
-                        <p>ваш баланс: 0</p>
-                    </div>
-                    <div className={style.block__menu_buy}>
-                        <button>Совершить покупку</button>
-                    </div>
-                    <div>
-                        <button><img src={PUBLIC_URL + '/images/payPal_icon.png'} alt="#" /></button>
-                        <button><img src={PUBLIC_URL + '/images/visa_icon.png'} alt="#" /></button>
+        <div>
+            <section className={style.block}>
+                <div className="container">
+                    <div className={style.block__menu}>
+                        <div className={style.block__menu_wrapper}>
+                            <div className={style.block__menu_currentTime}>
+                                <img src={PUBLIC_URL + '/images/clock_icon.png'} alt="#" />
+                                <span>{dateNow}</span>
+                            </div>
+                            <div className={style.block__menu_exchangeRates}>
+                                <button><img src={PUBLIC_URL + '/images/bank_icon.png'} alt="#" />Курс валют</button>
+                            </div>
+                            <div className={style.block__menu_bonusAccount}>
+                                <button><img src={PUBLIC_URL + '/images/bonusAccount_icon.png'} alt="#" />Бонусный счет</button>
+                            </div>
+                            <div className={style.block__menu_balance}>
+                                <p>Ваш баланс: 0</p>
+                            </div>
+                            <div className={style.block__menu_buy}>
+                                <button>Совершить покупку</button>
+                            </div>
+                            <div className={style.block__payment_btns}>
+                                <button><img src={PUBLIC_URL + '/images/payPal_icon.png'} alt="#" /></button>
+                                <button><img src={PUBLIC_URL + '/images/visa_icon.png'} alt="#" /></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section>
+                <div className={style.info__userLogo}>
+                    <img src="https://via.placeholder.com/150" alt="#" />
+                </div>
+                <div>
+                    <p>Имя:</p>
+                    <p>Логин:</p>
+                    <p>E-mail:</p>
+                    <p>Телефон:</p>
+                    <p>Адрес:</p>
+                    <div className={style.info__profileBtns}>
+                        <button>Редактировать</button>
+                        <button>Изменить пароль</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
     )
 }
 
