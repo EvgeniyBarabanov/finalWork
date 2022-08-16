@@ -18,19 +18,25 @@ function Registration(){
             phone: formData.get('phone'),
             pswrd: formData.get('password')
         }
-        
+
+
         if(user.name.length === 0 || user.phone.length === 0 || user.phone.length === 0){
             emptyField.current.classList.add(style.block__emptyField)
             return;
         }
+
         let userTest = userAdd.find(item => item.phone === user.phone);
+        
         if(userTest !== undefined){
             warning.current.classList.remove(style.block__warning_none)
             return;
+        }else{
+            const userAddTmp = userAdd;
+            userAddTmp.push(user);
+            setUserAdd([...userAddTmp]);
+            console.log("пользователь добавлен, вы можете войти на свою страницу");
         }
-        const userAddTmp = userAdd;
-        userAddTmp.push(user);
-        setUserAdd([...userAddTmp]);
+
     }
 
     useEffect(()=>{

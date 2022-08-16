@@ -6,12 +6,17 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Login() {
 
+
     const preventDefault = function(event){
         event.preventDefault();
     }
 
-    const logIn = function(){
-        
+    
+
+    const test = function(event){
+        event.preventDefault();
+        window.location.href = 'http://localhost:3000/myPage';
+
     }
 
 	return (
@@ -33,7 +38,8 @@ function Login() {
                     <Link to="/registration" className={style.login__pswrdQuickRegistration}>быстрая регистрация</Link>
                 </div>
                 <div className={style.login__btns}>
-                    <Link to='/myPage' className={style.form__sendBtn}>Войти</Link>
+                    <button onClick={test} className={style.form__sendBtn}>Войти</button>
+
                     <div className={style.anotherLogin}>
                         <button onClick={preventDefault}><img src={PUBLIC_URL + '/images/google_icon.png'} alt="#" /></button>
                         <button onClick={preventDefault}><img src={PUBLIC_URL + '/images/FB_icon.png'} alt="#" /></button>
