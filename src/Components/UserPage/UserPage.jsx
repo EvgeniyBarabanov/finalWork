@@ -1,21 +1,21 @@
 import moment from 'moment';
-import { useEffect, useState } from 'react';
-
+import { useEffect, useState, useContext } from 'react';
+import { MainContext } from '../Main';
 import style from './UserPage.module.css'
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 
-
 function UserPage(){
     
+    const {user} = useContext(MainContext);
     const [dateNow, setDateNow] = useState('')
-    
+    console.log(user);
     useEffect(()=>{
         window.setTimeout(() => {
             setDateNow(moment().format('MMMM Do YYYY, h:mm:ss a'));
         }, 1000);
-    })
+    }, [dateNow])
 
     return(
         <div>
@@ -48,18 +48,20 @@ function UserPage(){
                 </div>
             </section>
             <section>
-                <div className={style.info__userLogo}>
-                    <img src="https://via.placeholder.com/150" alt="#" />
-                </div>
-                <div>
-                    <p>Имя:</p>
-                    <p>Логин:</p>
-                    <p>E-mail:</p>
-                    <p>Телефон:</p>
-                    <p>Адрес:</p>
-                    <div className={style.info__profileBtns}>
-                        <button>Редактировать</button>
-                        <button>Изменить пароль</button>
+                <div className="container">
+                    <div className={style.info__userLogo}>
+                        <img src="https://via.placeholder.com/150" alt="#" />
+                    </div>
+                    <div>
+                        <p>Имя: {user[0].name}</p>
+                        <p>Логин:</p>
+                        <p>E-mail:</p>
+                        <p>Телефон: {user[0].phone}</p>
+                        <p>Адрес:</p>
+                        <div className={style.info__profileBtns}>
+                            <button>Редактировать</button>
+                            <button>Изменить пароль</button>
+                        </div>
                     </div>
                 </div>
             </section>

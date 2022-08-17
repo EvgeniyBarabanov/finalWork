@@ -41,7 +41,7 @@ function SelectCategory(props) {
 									<li key={index} className={style.sliderProduct__item}>
 										<p>{item.title}</p>
 										<img  className={style.image} src={item.images[0]} alt="#" />
-										<progress value={item.rating} max='5'>chlin</progress>
+										<progress value={item.rating} max='5'>progress</progress>
 										<span>{item.description}</span>
 									</li>
 								)
