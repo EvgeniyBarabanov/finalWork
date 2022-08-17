@@ -1,6 +1,5 @@
 import moment from 'moment';
-import { useEffect, useState, useContext } from 'react';
-import { MainContext } from '../Main';
+import { useEffect, useState } from 'react';
 import style from './UserPage.module.css'
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -8,14 +7,13 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function UserPage(){
     
-    const {user} = useContext(MainContext);
     const [dateNow, setDateNow] = useState('')
-    console.log(user);
+    
     useEffect(()=>{
         window.setTimeout(() => {
             setDateNow(moment().format('MMMM Do YYYY, h:mm:ss a'));
         }, 1000);
-    }, [dateNow])
+    })
 
     return(
         <div>
@@ -37,7 +35,7 @@ function UserPage(){
                                 <p>Ваш баланс: 0</p>
                             </div>
                             <div className={style.block__menu_buy}>
-                                <button>Совершить покупку</button>
+                                <button><img src={PUBLIC_URL + '/images/cart_icon.png'} alt="#" /></button>
                             </div>
                             <div className={style.block__payment_btns}>
                                 <button><img src={PUBLIC_URL + '/images/payPal_icon.png'} alt="#" /></button>
@@ -49,18 +47,20 @@ function UserPage(){
             </section>
             <section>
                 <div className="container">
-                    <div className={style.info__userLogo}>
-                        <img src="https://via.placeholder.com/150" alt="#" />
-                    </div>
-                    <div>
-                        <p>Имя: {user[0].name}</p>
-                        <p>Логин:</p>
-                        <p>E-mail:</p>
-                        <p>Телефон: {user[0].phone}</p>
-                        <p>Адрес:</p>
-                        <div className={style.info__profileBtns}>
-                            <button>Редактировать</button>
-                            <button>Изменить пароль</button>
+                    <div className={style.personal__information_wrapper}>
+                        <div className={style.personal__information_logo}>
+                            <img src="https://via.placeholder.com/150" alt="#" />
+                        </div>
+                        <div className={style.personal__information_data}>
+                            <p>Имя:</p>
+                            <p>Логин: </p>
+                            <p>E-mail:</p>
+                            <p>Телефон:</p>
+                            <p>Адрес:</p>
+                            <div className={style.personal__information_btns}>
+                                <button>Редактировать</button>
+                                <button>Изменить пароль</button>
+                            </div>
                         </div>
                     </div>
                 </div>

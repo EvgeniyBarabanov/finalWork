@@ -14,13 +14,13 @@ function Registration(){
         const formData = new FormData(userForm.current);
 
         let user = {
-            name: formData.get('firstName'),
+            login: formData.get('login'),
             phone: formData.get('phone'),
             pswrd: formData.get('password')
         }
 
 
-        if(user.name.length === 0 || user.phone.length === 0 || user.phone.length === 0){
+        if(user.login.length === 0 || user.phone.length === 0 || user.phone.length === 0){
             emptyField.current.classList.add(style.block__emptyField)
             return;
         }
@@ -65,8 +65,8 @@ function Registration(){
                     <p ref={warning} className={style.block__warning_none}>Пользователь с таким номером уже зарегистрирован</p>
                     <p ref={emptyField} className={style.block__emptyField_none}>Пожалуйста, заполните поля</p>  
                 <div className={style.block__login_form_field}>
-                    <p>Имя:</p>
-                    <input required type="text" name="firstName"/>
+                    <p>Логин:</p>
+                    <input required type="text" name="login"/>
                 </div>
                 <div className={style.block__login_form_field}>
                     <p>Номер телефона:</p>
