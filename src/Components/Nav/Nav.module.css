@@ -65,6 +65,7 @@
     .block__burgerBtn{
         display: block;
         position: absolute;
+        z-index: 2;
     }
 
     .block__list{
@@ -73,6 +74,7 @@
         justify-content: space-between;
         background-color: #fff;
         position: fixed;
+        z-index: 2;
         top: 0;
         left: -300px;
         transform: translateX(0px);
@@ -81,6 +83,22 @@
 
     .visibilityMenu{
         transform: translateX(300px);
+    }
+
+    .block_opacity{
+        position: absolute;
+        background-color: #fff;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity ease-in-out 1s;
+    }
+    
+    .transparent{
+        background-color: #fff;
+        opacity: 0.5;
+        z-index: 1;
     }
 
     .block__list>li{

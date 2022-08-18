@@ -24,7 +24,7 @@ function Login() {
     const logIn = function(event){
         event.preventDefault();
         const form = new FormData(loginForm.current);
-
+        console.log(window.location)
         let userStorage = localStorage.getItem('user');
         userStorage = JSON.parse(userStorage);
 
@@ -32,7 +32,7 @@ function Login() {
             if(item.phone === form.get('phone') && item.pswrd === form.get('password')){
                 document.cookie = 'auth=true; max-age=3600';
                 document.cookie = 'authLogin=' + item.login + '; max-age=3600';
-                navigate('/' + item.login);
+                window.location.href = 'http://localhost:3000'
             }else{
                 preventionNone.current.classList.add(style.login__form_prevention);
             }
@@ -40,7 +40,6 @@ function Login() {
     }
 
     const auth = function(){
-
         if (getCookie('auth') === 'true'){
             navigate(('/' + getCookie('authLogin')))
             console.log(getCookie('authLogin'));
