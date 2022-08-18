@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import style from './Nav.module.css';
@@ -7,10 +9,26 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 function Nav() {
 
 	const visibilityMenu = useRef();
-
+	const [name, setName] = useState('') 
+	console.log('я вывожусь каждый раз');
 	const visibility = function(){
 		visibilityMenu.current.classList.toggle(style.visibilityMenu);
 	}
+
+	const getCookie = function(name) {
+        let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+	useEffect(()=>{
+		console.log('asd');
+        if (getCookie('authLogin')){
+			setName(getCookie('authLogin')) 
+    	}else{
+			setName('Войти')
+		}
+	})
+
 
 	return (
 	<nav className={style.block}>
@@ -30,7 +48,7 @@ function Nav() {
 			<li><Link to="/stores">Магазины</Link></li>	
 		</ul>
 		<div className={style.block__user}>
-			<Link to="/login" className={style.block__logIn}><img src={PUBLIC_URL + '/images/userLogo.png'} alt="#" /> Вход</Link>
+			<Link to="/login" className={style.block__logIn}><img src={PUBLIC_URL + '/images/userLogo.png'} alt="#" />{name}</Link>
 			<button className={style.block__contact_btn}>Связаться с нами</button>
 		</div>
 	</nav>

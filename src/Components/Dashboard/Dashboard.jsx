@@ -12,9 +12,10 @@ function Dashboard() {
 	const [allProducts, setAllProducts] = useState({products:[]});
 
 	const transform = useRef();
+	
 
 	const getData = function(){
-		if(localStorage.length > 0){
+		if(localStorage.getItem('storage')){
 			if(allProducts.products.length === 0){
 				let localElem = localStorage.getItem('storage');
         		localElem = JSON.parse(localElem);

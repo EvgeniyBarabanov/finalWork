@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -11,12 +12,16 @@ function Login() {
     const preventionNone = useRef();
     let navigate = useNavigate();
 
-
     const preventDefault = function(event){
         event.preventDefault();
     }
 
-    const test = function(event){
+    const getCookie = function(name) {
+        let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+    
+    const logIn = function(event){
         event.preventDefault();
         const form = new FormData(loginForm.current);
 
@@ -25,13 +30,26 @@ function Login() {
 
         userStorage.map((item)=>{
             if(item.phone === form.get('phone') && item.pswrd === form.get('password')){
+                document.cookie = 'auth=true; max-age=3600';
+                document.cookie = 'authLogin=' + item.login + '; max-age=3600';
                 navigate('/' + item.login);
             }else{
                 preventionNone.current.classList.add(style.login__form_prevention);
             }
         })
-
     }
+
+    const auth = function(){
+
+        if (getCookie('auth') === 'true'){
+            navigate(('/' + getCookie('authLogin')))
+            console.log(getCookie('authLogin'));
+        }
+    }
+
+    useEffect(()=>{
+        auth();
+    })
 
 	return (
 	    <div className={style.login}>
@@ -57,7 +75,7 @@ function Login() {
                     </div>
 
                     <div className={style.login__btns}>
-                        <button onClick={test} className={style.form__sendBtn}>Войти</button>
+                        <button onClick={logIn} className={style.form__sendBtn}>Войти</button>
 
                         <div className={style.anotherLogin}>
                             <button onClick={preventDefault}><img src={PUBLIC_URL + '/images/google_icon.png'} alt="#" /></button>

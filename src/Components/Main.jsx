@@ -14,7 +14,8 @@ import UserPage from './UserPage/UserPage';
 
 
 function Main() {
-
+	
+	if(!localStorage.getItem('user')){localStorage.setItem('user','[]')}
 	let localUser = localStorage.getItem('user');
 	localUser = JSON.parse(localUser);
 	console.log(localUser);
@@ -32,7 +33,7 @@ function Main() {
 			<Route path='/stores' element={<Stores />} />
 			<Route path='/login' element={<Login />} />
 			<Route path='/registration' element={<Registration />} />
-			{localUser.map((item, index) =>{
+			{ localUser.map((item, index) =>{
 				return(
 					<Route key={index} path={'/' + item.login} element={<UserPage />} />
 				)
