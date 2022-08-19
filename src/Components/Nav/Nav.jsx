@@ -52,7 +52,7 @@ function Nav() {
 			<Link to="/login" className={style.block__logIn}><img src={PUBLIC_URL + '/images/userLogo.png'} alt="#" />{name}</Link>
 			<button className={style.block__contact_btn}>Связаться с нами</button>
 		</div>
-		<div ref={transparent} className={style.block_opacity}></div>
+		{/* <div ref={transparent} className={style.block_opacity}></div> */}
 	</nav>
 	);
 }

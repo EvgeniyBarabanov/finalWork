@@ -7,13 +7,46 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function UserPage(){
     
-    const [dateNow, setDateNow] = useState('')
+    const [dateNow, setDateNow] = useState(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    const [data, setData] = useState([])
     
+    const getCookie = function(name) {
+        let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    const logOut = function () {
+        if(!getCookie('auth') || !getCookie('authLogin')) return;
+
+        document.cookie = 'auth=; max-age=-1';
+        document.cookie = 'authLogin=; max-age=-1';
+        document.cookie = 'authPhone=; max-age=-1';
+
+        if(!getCookie('auth')) window.location.reload();
+    }
+
+    const userData = function(){
+        if(/* window.location.pathname = '/' +  */ !getCookie('auth')){
+            window.location = "http://localhost:3000";
+        }
+        let userInfo = localStorage.getItem('user');
+        userInfo = JSON.parse(userInfo);
+
+        userInfo.map((item)=>{
+            if(data.length === 0){
+                if(item.phone === getCookie('authPhone')){
+                    setData([item]);
+                }
+            }
+        })
+    };
+    
+
     useEffect(()=>{
-        window.setTimeout(() => {
-            setDateNow(moment().format('MMMM Do YYYY, h:mm:ss a'));
-        }, 1000);
+        userData();
+        
     })
+    
 
     return(
         <div>
@@ -51,17 +84,23 @@ function UserPage(){
                         <div className={style.personal__information_logo}>
                             <img src="https://via.placeholder.com/150" alt="#" />
                         </div>
-                        <div className={style.personal__information_data}>
-                            <p>Имя:</p>
-                            <p>Логин: </p>
-                            <p>E-mail:</p>
-                            <p>Телефон:</p>
-                            <p>Адрес:</p>
-                            <div className={style.personal__information_btns}>
-                                <button>Редактировать</button>
-                                <button>Изменить пароль</button>
-                            </div>
-                        </div>
+                        {data.map((item,index)=>{
+                            return(
+                                <div key={index} className={style.personal__information_data}>
+                                    <p>Имя:</p>
+                                    <p>Логин: {item.login}</p>
+                                    <p>Телефон: {item.phone}</p>
+                                    <p>Электронная почта:</p>
+                                    <div className={style.personal__information_btns}>
+                                        <button>Редактировать</button>
+                                        <button>Изменить пароль</button>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    <div className={style.block__logOut}>
+                        <button onClick={logOut}>Выход из аккаунта</button>
+                    </div>
                     </div>
                 </div>
             </section>

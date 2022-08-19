@@ -18,7 +18,6 @@ function Main() {
 	if(!localStorage.getItem('user')){localStorage.setItem('user','[]')}
 	let localUser = localStorage.getItem('user');
 	localUser = JSON.parse(localUser);
-	console.log(localUser);
 
 	return (
 	<main className="main">

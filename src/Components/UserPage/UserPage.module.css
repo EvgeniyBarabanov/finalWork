@@ -96,7 +96,7 @@
     margin-right: 20px;
 }
 
-.personal__information_btns>button:last-child{
+.personal__information_btns>button:nth-child(2){
     color: #01CD7D;
     border: none;
     background: none;
@@ -104,4 +104,20 @@
     border-bottom: 2px dashed #01CD7D;
     cursor: pointer;
     padding: 5px 0px;
+    margin-right: 20px;
+}
+
+.block__logOut{
+    margin-left: auto;
+}
+
+.block__logOut>button{
+    border: 0;
+    background: linear-gradient(90deg, #00C97B, #00D981);
+    border-radius: 36px;
+    padding: 15px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
 }

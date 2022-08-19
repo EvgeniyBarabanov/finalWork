@@ -31,6 +31,7 @@ function Login() {
         userStorage.map((item)=>{
             if(item.phone === form.get('phone') && item.pswrd === form.get('password')){
                 document.cookie = 'auth=true; max-age=3600';
+                document.cookie = 'authPhone=' + item.phone + '; max-age=3600';
                 document.cookie = 'authLogin=' + item.login + '; max-age=3600';
                 window.location.href = 'http://localhost:3000'
             }else{
@@ -42,7 +43,6 @@ function Login() {
     const auth = function(){
         if (getCookie('auth') === 'true'){
             navigate(('/' + getCookie('authLogin')))
-            console.log(getCookie('authLogin'));
         }
     }
 
