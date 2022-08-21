@@ -26,7 +26,7 @@ function UserPage(){
     }
 
     const userData = function(){
-        if(/* window.location.pathname = '/' +  */ !getCookie('auth')){
+        if(!getCookie('auth')){
             window.location = "http://localhost:3000";
         }
         let userInfo = localStorage.getItem('user');

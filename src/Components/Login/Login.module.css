@@ -1,5 +1,4 @@
 .login{
-    background-color: #1f242827;
     padding: 20px 0;
 }
 
@@ -7,10 +6,9 @@
     position: relative;
     font-weight: bold;
     width: 400px;
-    height: 460px;
     margin: 0 auto;
-    padding: 50px 30px;
-    background-color: #fff;
+    padding: 40px 30px;
+    background-color: #ededed;
     border-radius: 16px;
     box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.511),
                 -5px 0px 15px rgba(0, 0, 0, 0.511);
@@ -95,16 +93,74 @@
 
 .anotherLogin{
     display: flex;
-    align-items: flex-end;
     margin-left: auto;
 }
 
 .anotherLogin>button{
+    display: flex;
+    align-items: center;
     border: 0;
     cursor: pointer;
-    background-color: #fff;
+    background: none;
+    border-radius: 100%;
+
 }
 
 .anotherLogin>button:not(:last-child){
     margin-right: 5px;
+}
+
+@media(max-width:425px){
+    .login__form{
+        padding: 25px 30px;
+    }
+
+    .login__form h2{
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+@media(max-width:375px){
+    .login{
+        padding: 0;
+    }
+
+    .login__form{
+        width: 100%;
+    }
+
+    .form__sendBtn{
+        padding: 16px 45px;
+    }
+
+    .login__pswrdQuickRegistration{
+        text-align: center;
+    }
+}
+
+@media(max-width:320px){
+    .login__form h2{
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    .form__field{
+        margin-top: 20px;
+    }
+
+    .login__pswrd{
+        flex-direction: column;
+    }
+    .login__pswrd>span{
+        text-align: center;
+    }
+
+    .login__btns{
+        flex-direction: column;
+    }
+
+    .anotherLogin{
+        margin: 15px auto 0px;
+    }
 }

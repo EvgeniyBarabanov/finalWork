@@ -1,18 +1,20 @@
 .block{
-    background-color: #1f242827;
     padding: 20px 0;
 }
 
 .block__login_form{
     font-weight: bold;
     width: 400px;
-    height: 700px;
     margin: 0 auto;
-    padding: 50px 30px;
-    background-color: #fff;
+    padding: 40px 30px;
+    background-color: #ededed;
     border-radius: 16px;
     box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.511),
                 -5px 0px 15px rgba(0, 0, 0, 0.511);
+}
+
+.block__login_form>p{
+    margin-top: 10px;
 }
 
 .block__warning{
@@ -46,11 +48,7 @@
 }
 
 .block__login_form_field{
-    margin-top: 40px;
-}
-
-.block__login_form_field p{
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .block__login_form_field input{
@@ -85,4 +83,27 @@
     font-weight: bold;
     font-size: 13px;
     cursor: pointer;
+}
+
+@media(max-width:375px){
+    .block__login_form{
+        width: 100%;
+        padding: 30px ;
+    }
+
+    .block__login_form h2{
+        font-size: 20px;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    .block__login_form>p{
+        text-align: center;
+    }
+}
+
+@media(max-width:320px){
+    .block__login_form_registrationBtn{
+        padding: 15px;
+    }
 }

@@ -9,12 +9,12 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 function Nav() {
 
 	const visibilityMenu = useRef();
-	const transparent = useRef();
+	/* const transparent = useRef(); */
 	const [name, setName] = useState('');
 
 	const visibility = function(){
 		visibilityMenu.current.classList.toggle(style.visibilityMenu);
-		transparent.current.classList.toggle(style.transparent)
+		/* transparent.current.classList.toggle(style.transparent) */
 	}
 
 	const getCookie = function(name) {

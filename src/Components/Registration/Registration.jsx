@@ -54,7 +54,6 @@ function Registration(){
 
     const preventDefault = function(event){
         event.preventDefault();
-        
     }
 
 	return (

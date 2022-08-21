@@ -78,6 +78,10 @@
 } */
 
 @media(max-width:1024px){
+    .block{
+        border-radius: 0px 0px 20px 20px;
+    }
+
     .block__burgerBtn{
         display: block;
         position: absolute;
