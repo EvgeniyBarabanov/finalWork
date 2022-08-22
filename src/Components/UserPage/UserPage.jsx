@@ -1,6 +1,9 @@
 import moment from 'moment';
 import { useEffect, useState } from 'react';
+
 import style from './UserPage.module.css'
+
+const getCookie = require('../GetCookie');
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
@@ -9,11 +12,6 @@ function UserPage(){
     
     const [dateNow, setDateNow] = useState(moment().format('MMMM Do YYYY, h:mm:ss a'));
     const [data, setData] = useState([])
-    
-    const getCookie = function(name) {
-        let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
-        return matches ? decodeURIComponent(matches[1]) : undefined;
-    }
 
     const logOut = function () {
         if(!getCookie('auth') || !getCookie('authLogin')) return;
@@ -41,12 +39,10 @@ function UserPage(){
         })
     };
     
-
     useEffect(()=>{
         userData();
         
     })
-    
 
     return(
         <div>

@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import style from './Login.module.css';
 
+const getCookie = require('../GetCookie');
+
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Login() {
@@ -16,10 +18,7 @@ function Login() {
         event.preventDefault();
     }
 
-    const getCookie = function(name) {
-        let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
-        return matches ? decodeURIComponent(matches[1]) : undefined;
-    }
+    
     
     const logIn = function(event){
         event.preventDefault();

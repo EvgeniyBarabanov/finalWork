@@ -3,6 +3,8 @@ import { MainContext } from '../Dashboard/Dashboard';
 
 import style from './SelectCategory.module.css';
 
+const getCookie = require('../GetCookie');
+
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function SelectCategory(props) {
@@ -29,31 +31,51 @@ function SelectCategory(props) {
 		}
 	}
 
+	const addToCart = function(){
+		let currentProduct = transform.current.firstChild.nextSibling;
+		if(!getCookie("id")){
+			document.cookie = 'id=' + currentProduct.id + '; max-age=60';
+			console.log(getCookie("id"));
+		}else{
+			let arr = (getCookie("id").match(/\d+/g))
+			if(arr.includes(getCookie("id").match(/\d+/g))){
+				return;
+			}else{
+				arr.push
+			}
+			/* document.cookie = 'id=' + currentProduct.id + '; max-age=60';
+			console.log(getCookie("id")); */
+		}
+		
+	}
+
 	return (
-	<div className="selectCategory">
-		<div className="container">
-			<div className={style.sliderProduct}>
-				<div className={style.sliderProduct__wrapper}>
-					<ul ref={transform} className={style.sliderProduct__list}>
-						{allProducts.products.map((item, index)=>{
-							if(item.category === props.category){	
-								return(
-									<li key={index} className={style.sliderProduct__item}>
-										<p>{item.title}</p>
-										<img  className={style.image} src={item.images[0]} alt="#" />
-										<progress value={item.rating} max='5'>progress</progress>
-										<span>{item.description}</span>
-									</li>
-								)
-							}
-						})}
-					</ul>
+		<div className="selectCategory">
+			<div className="container">
+				<div className={style.sliderProduct}>
+					<div className={style.sliderProduct__wrapper}>
+						<ul ref={transform} className={style.sliderProduct__list}>
+							{allProducts.products.map((item, id)=>{
+								if(item.category === props.category){	
+									return(
+										<li key={id} id={item.id} className={style.sliderProduct__item}>
+											<p>{item.title}</p>
+											<img  className={style.image} src={item.images[0]} alt="#" />
+											<progress value={item.rating} max='5'>progress</progress>
+											<p>{item.description}</p>
+											<p>{item.price + "$"}</p>
+										</li>
+									)
+								}
+							})}
+						</ul>
+					</div>
+					<button id='prew' onClick={changeSlide} className={style.btn_prew}><img src={PUBLIC_URL + '/images/arrowLeft.png'} alt="#" /></button>
+					<button id='next' onClick={changeSlide} className={style.btn_next}><img src={PUBLIC_URL + '/images/arrowRight.png'} alt="#" /></button>
+					<button onClick={addToCart} className={style.sliderProduct__addToCart}>добавить в корзину</button>
 				</div>
-				<button id='prew' onClick={changeSlide} className={style.btn_prew}><img src={PUBLIC_URL + '/images/arrowLeft.png'} alt="#" /></button>
-				<button id='next' onClick={changeSlide} className={style.btn_next}><img src={PUBLIC_URL + '/images/arrowRight.png'} alt="#" /></button>
 			</div>
 		</div>
-	</div>
 	);
 }
 
