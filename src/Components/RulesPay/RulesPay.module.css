@@ -1,0 +1,84 @@
+.promo{
+    background: linear-gradient(90deg, #5B52A3, #40B8EA);
+    border-radius: 36px;
+    height: 180px;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+
+.promo_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.promo_info p{
+    font-size: 13px;
+    line-height: 14px;
+    opacity: 0.7;
+}
+
+.promo_info h2{
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.promo_info span{
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.promo_btn{
+    display: flex;
+    align-items: center;
+}
+
+.promo_btn>button{
+    border: 0;
+    background-color: #00C97B;
+    border-radius: 36px;
+    color: #fff;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.stepBuy{
+    padding: 0px 80px;
+    margin-top: 80px;
+}
+
+.stepBuy_info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+.stepBuy_info_stage{
+    display: flex;
+}
+
+.stepBuy_info_stage_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.stepBuy_info_stage_wrapper h3{
+    position: relative;
+    margin-left: 100px;
+}
+
+.stepBuy_info_stage_wrapper h3::before{
+    content: '01';
+    position: absolute;
+    left: -103px;
+    top: -15px;
+    color: #00C97B;
+    font-size: 60px;
+    font-weight: normal;
+    border-right: 2px solid #C0C9D7;
+    line-height: 45px;
+    padding-right: 10px;
+}
