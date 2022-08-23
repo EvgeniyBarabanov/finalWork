@@ -63,9 +63,6 @@ function UserPage(){
                             <div className={style.block__menu_balance}>
                                 <p>Ваш баланс: 0</p>
                             </div>
-                            <div className={style.block__menu_buy}>
-                                <button><img src={PUBLIC_URL + '/images/cart_icon.png'} alt="#" /></button>
-                            </div>
                             <div className={style.block__payment_btns}>
                                 <button><img src={PUBLIC_URL + '/images/payPal_icon.png'} alt="#" /></button>
                                 <button><img src={PUBLIC_URL + '/images/visa_icon.png'} alt="#" /></button>

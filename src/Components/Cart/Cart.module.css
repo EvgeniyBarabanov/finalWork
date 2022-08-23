@@ -1,0 +1,109 @@
+.cart__wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.cart__info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.cart__info>button{
+    border: 0;
+    background-color: #00C97B;
+    border-radius: 36px;
+    color: #fff;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.cart__search{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.cart__searchOrderBtn>button{
+    border: 0;
+    background: none; 
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 40px;
+    padding-right: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.cart__searchOrderBtn>button::before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+}
+
+.cart__searchOrderBtn>button:active::before{
+    width: 100%;
+    border-bottom: 4px solid #00C97B;
+}
+
+.cart__searchOrderBtn>button:active{
+    color: #00C97B;
+}
+
+.cart__searchTrack{
+    display: flex;
+    gap: 20px;
+}
+
+.cart__searchTrack_input{
+    display: flex;
+    position: relative;
+}
+
+.cart__searchTrack_input input{
+    border-radius: 120px;
+    border: 1px solid #C0C9D7;
+    padding: 0px 20px;
+    width: 350px;
+    font-size: 15px;
+}
+
+.cart__searchTrack_input input::-webkit-search-decoration,
+.cart__searchTrack_input input::-webkit-search-cancel-button,
+.cart__searchTrack_input input::-webkit-search-results-button,
+.cart__searchTrack_input input::-webkit-search-results-decoration { 
+    display: none; 
+}
+
+.cart__searchTrack_input_deleteText{
+    position: absolute;
+    border: 0;
+    right: 17px;
+    top: 18px;
+    background: none;
+    cursor: pointer;
+
+}
+
+.cart__searchTrack>button{
+    border-radius: 100%;
+    background:none;
+    border: 2px solid #00C97B;
+    width: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.cart__searchTrack>button:hover{
+    background-color: #ededed;
+}
+
+.cart__table{
+    margin-top: 60px;
+}

@@ -50,7 +50,7 @@ function Login() {
     })
 
 	return (
-	    <div className={style.login}>
+	    <section className={style.login}>
             <div className="container">
 	            <form ref={loginForm} className={style.login__form}>
                     <h2>Выполните вход в ваш личный кабинет</h2>
@@ -84,7 +84,7 @@ function Login() {
                     </div>
                 </form>
             </div>
-	    </div>
+	    </section>
 	);
 }
 

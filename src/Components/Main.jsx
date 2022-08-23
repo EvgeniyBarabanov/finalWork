@@ -11,6 +11,7 @@ import Stores from './Stores/Stores';
 import Login from './Login/Login';
 import Registration from './Registration/Registration';
 import UserPage from './UserPage/UserPage';
+import Cart from './Cart/Cart';
 
 
 function Main() {
@@ -32,6 +33,7 @@ function Main() {
 			<Route path='/stores' element={<Stores />} />
 			<Route path='/login' element={<Login />} />
 			<Route path='/registration' element={<Registration />} />
+			<Route path='/cart' element={<Cart />} />
 			{ localUser.map((item, index) =>{
 				return(
 					<Route key={index} path={'/' + item.login} element={<UserPage />} />

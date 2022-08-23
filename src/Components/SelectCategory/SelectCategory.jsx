@@ -34,17 +34,16 @@ function SelectCategory(props) {
 	const addToCart = function(){
 		let currentProduct = transform.current.firstChild.nextSibling;
 		if(!getCookie("id")){
-			document.cookie = 'id=' + currentProduct.id + '; max-age=60';
+			document.cookie = 'id=' + currentProduct.id + '; max-age=1800';
 			console.log(getCookie("id"));
 		}else{
-			let arr = (getCookie("id").match(/\d+/g))
-			if(arr.includes(getCookie("id").match(/\d+/g))){
+			let arr = (getCookie("id").match(/\d+/g));
+			if(arr.includes(currentProduct.id)){
 				return;
 			}else{
-				arr.push
+				arr.push(currentProduct.id);
+				document.cookie = 'id=' + arr + '; max-age=1800';
 			}
-			/* document.cookie = 'id=' + currentProduct.id + '; max-age=60';
-			console.log(getCookie("id")); */
 		}
 		
 	}
