@@ -11,14 +11,14 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Nav() {
 
-
-	const visibilityMenu = useRef();
-	/* const transparent = useRef(); */
 	const [name, setName] = useState('');
 
-	const visibility = function(){
-		visibilityMenu.current.classList.toggle(style.visibilityMenu);
-		/* transparent.current.classList.toggle(style.transparent) */
+	const hiddenBtn = useRef();
+	const hiddenMenu = useRef();
+
+	const menuBtn = function(){
+		hiddenBtn.current.classList.toggle(style.active);
+		hiddenMenu.current.classList.toggle(style.active);
 	}
 
 	useEffect(()=>{
@@ -30,15 +30,20 @@ function Nav() {
 	})
 
 	return (
+
 		<nav className={style.block}>
-				<button className={style.block__burgerBtn} onClick={visibility}></button>
+			<div ref={hiddenBtn} onClick={menuBtn} className={style.menuBtn}>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 				<div className={style.block__logo}>
     	    		    <a href="/">
     	    		        <img src={PUBLIC_URL + '/images/logo.png'} alt="#" />
 							<span>OKEYPOST</span>
     	    		    </a>
     	    		</div>
-		    	<ul ref={visibilityMenu} className={style.block__list}>
+		    	<ul ref={hiddenMenu} className={style.block__list}>
 					<li><Link to="/rulesPay">Как покупать</Link></li>
 					<li><Link to="/sale">Распродажи</Link></li>
 					<li><Link to="/prices">Цены</Link></li>
@@ -52,7 +57,6 @@ function Nav() {
 					<Link to="/login" className={style.block__logIn}><img src={PUBLIC_URL + '/images/userLogo.png'} alt="#" />{name}</Link>
 					<button className={style.block__contact_btn}>Связаться с нами</button>
 				</div>
-				{/* <div ref={transparent} className={style.block_opacity}></div> */}
 		</nav>
 	);
 }

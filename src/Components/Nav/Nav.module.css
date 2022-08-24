@@ -4,10 +4,6 @@
     height: 50px;
 }
 
-.block__burgerBtn{
-    display: none;
-}
-
 .block__logo a{
     display: flex;
     align-items: center;
@@ -40,7 +36,6 @@
     width: 0%;
     position: absolute;
     bottom: 0;
-    
 }
 
 .block__list a:hover::before{
@@ -81,45 +76,87 @@
         border-radius: 0px 0px 20px 20px;
     }
 
-    .block__burgerBtn:before{
-        content: "";
+    .menuBtn{
+        width: 30px;
+        height: 30px;
+        position: relative;
+        z-index:2;
+        overflow: hidden;
     }
 
-    .block__burgerBtn{
-        display: block;
+    .menuBtn span{
+        width: 30px;
+        height: 2px;
         position: absolute;
-        z-index: 2;
-        
-        border: 2px solid #000;
-        width: 40px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #222222;
+        transition: all 0.5s;
+    }
+    
+    .menuBtn span:nth-of-type(2) {
+        top: calc(50% - 5px);
+    }
+
+    .menuBtn span:nth-of-type(3) {
+        top: calc(50% + 5px);
+    }
+
+    .menuBtn.active span:nth-of-type(1) {
+        display: none;
+    }
+
+    .menuBtn.active span:nth-of-type(2) {
+        top: 50%;
+        transform: translate(-50%, 0%) rotate(45deg);  
+    }
+
+    .menuBtn.active span:nth-of-type(3) {
+        top: 50%;
+        transform: translate(-50%, 0%) rotate(-45deg); 
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+      background: #FFEFBA;
+        transform: translateX(-100%);
+        transition: transform 0.5s; 
     }
 
     .block__list{
-        height: 100%;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: #fff;
         position: fixed;
-        z-index: 2;
-        top: 0;
-        left: -300px;
-        transform: translateX(0px);
-        transition: transform ease-in-out 1s;
+        display: flex;
+        flex-direction: column;
+        top: 0px;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        /* padding: 15px; */
+        padding-top: 40px;
+        background: #FFEFBA;
+        transform: translateX(-100%);
+        transition: transform 0.5s; 
     }
 
-    .visibilityMenu{
-        transform: translateX(300px);
+    .block__list.active {
+        transform: translateX(0);
+    }
+    
+    .block__list li {
+        list-style-type: none;
     }
 
-    .block__list>li{
-        width: 250px;
-    }
-
-    .block__list a{
+    /* .block__list a{
         padding: 20px;
         display: block;
         text-align: center;
-    }
+    } */
 }
 
 @media(max-width:425px){

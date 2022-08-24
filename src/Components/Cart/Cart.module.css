@@ -106,4 +106,10 @@
 
 .cart__table{
     margin-top: 60px;
+    border: 2px solid black;
+}
+
+.cart__table th,
+.cart__table td{
+    border: 2px solid black;
 }

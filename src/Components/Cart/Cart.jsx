@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import style from './Cart.module.css'
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -7,17 +7,31 @@ const getCookie = require('../GetCookie');
 
 function Cart(){
 
+    const [arrProduct, setProductArr] = useState([])
+
     const cart = function(){
+        if(!getCookie('id')){
+            return;
+        }
+
         let localElem = localStorage.getItem('storage');
         localElem = JSON.parse(localElem);
-        console.log(localElem.products);
-        return localElem.products;
 
+        let productId = getCookie('id').split(',').map(Number);
+        if(arrProduct.length === 0){
+            let arrProductTmp = arrProduct;
+            localElem.products.map((item)=>{
+                if(productId.includes(item.id)){
+                    arrProductTmp.push(item); 
+                }
+                setProductArr([...arrProductTmp])
+            })
+        }
     }
 
     useEffect(()=>{
         cart();
-    })
+    },[arrProduct])
 
     return(
         <div>
@@ -56,10 +70,20 @@ function Cart(){
                                 </tr>
                             </thead>
                             <tbody>
-                                {cart().map((item)=>{
+                                {arrProduct.map((item,index)=>{
                                     return(
-                                        <tr>
+                                        <tr key={index}>
+                                            <td>{item.id}</td>
+                                            <td>{item.title}</td>
+                                            <td>{item.brand}</td>
                                             <td>{item.category}</td>
+                                            <td>{item.price}</td>
+                                            <td>{item.discountPercentage}</td>
+                                            <td>{item.rating}</td>
+                                            <td>
+                                                <button>-</button>
+                                                <button>+</button>    
+                                            </td>
                                         </tr>
                                     )
                                 })}
