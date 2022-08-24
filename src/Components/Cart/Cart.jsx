@@ -10,7 +10,8 @@ function Cart(){
     const cart = function(){
         let localElem = localStorage.getItem('storage');
         localElem = JSON.parse(localElem);
-        console.log(localElem);
+        console.log(localElem.products);
+        return localElem.products;
 
     }
 
@@ -20,7 +21,7 @@ function Cart(){
 
     return(
         <div>
-            <section className={style.cart}>
+            <section className='cart'>
                 <div className="container">
                     <div className={style.cart__wrapper}>
                         <div className={style.cart__info}>
@@ -43,7 +44,7 @@ function Cart(){
                         <table className={style.cart__table}>
                             <thead>
                                 <tr>
-                                    <th>Дата</th>
+                                    {/* <th>Дата</th> */}
                                     <th>Id заказа</th>
                                     <th>Наименование</th>
                                     <th>Бренд</th>
@@ -55,6 +56,13 @@ function Cart(){
                                 </tr>
                             </thead>
                             <tbody>
+                                {cart().map((item)=>{
+                                    return(
+                                        <tr>
+                                            <td>{item.category}</td>
+                                        </tr>
+                                    )
+                                })}
                             </tbody>
                         </table>
                     </div>

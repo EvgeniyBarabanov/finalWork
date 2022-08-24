@@ -46,7 +46,7 @@ function UserPage(){
 
     return(
         <div>
-            <section className={style.block}>
+            <section className='personal__information_menu'>
                 <div className="container">
                     <div className={style.block__menu}>
                         <div className={style.block__menu_wrapper}>
@@ -71,7 +71,8 @@ function UserPage(){
                     </div>
                 </div>
             </section>
-            <section>
+
+            <section className='personal__information_info'>
                 <div className="container">
                     <div className={style.personal__information_wrapper}>
                         <div className={style.personal__information_logo}>
@@ -90,13 +91,14 @@ function UserPage(){
                                     </div>
                                 </div>
                             )
-                        })}
-                    <div className={style.block__logOut}>
-                        <button onClick={logOut}>Выход из аккаунта</button>
-                    </div>
+                        })};
+                        <div className={style.block__logOut}>
+                            <button onClick={logOut}>Выход из аккаунта</button>
+                        </div>
                     </div>
                 </div>
             </section>
+            
         </div>
         
     )

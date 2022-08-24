@@ -1,13 +1,14 @@
-.block{
+header{
     padding: 25px 0;
 }
 
 @media(max-width:1024px) {
-    .block{
+    header{
         position: sticky;
         top: 0px;
         z-index: 2;
         background-color: #fff;
         padding: 15px 0;
+        border-radius: 0px 0px 36px 36px;
     }
 }

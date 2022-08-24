@@ -67,9 +67,9 @@ function Dashboard() {
 	})
 
 	return (
-		<div className={style.dashboard}>
+		<div className='dashboard'>
 		
-			<section className={style.delivery}>
+			<section className='delivery'>
 				<div className='container'>
 					<div className={style.delivery_info}>
 						<div className={style.delivery_info_description}>
@@ -84,7 +84,7 @@ function Dashboard() {
 				</div>
 			</section>
 
-			<section className={style.buy}>
+			<section className='buy'>
 				<div className="container">
 					<div>
 						<h3>Насколько выгодно покупать?</h3>
@@ -121,7 +121,22 @@ function Dashboard() {
 					</div>
 				</div>
 			</section>
-
+			
+			<section className='subsubscription'>				
+				<div className='container'>
+					<div className={style.block__subsubscription}>
+            		    <div className={style.block__subsubscription_wrapper}>
+            		        <p>Подпишитеть и будьте в курсе всех скидок и акций магазинов Великобритании!</p>
+            		        <div className={style.block__subsubscription_email}>
+            		            <p><img src={PUBLIC_URL + '/images/email_icon.png'} alt="#" />Введите ваш Email</p>
+            		            <input type="email" name="email" />
+            		        </div>
+            		        <button>Подписаться</button>
+            		    </div>
+            		</div>
+				</div>
+			</section>
+			
 		</div>
 	);
 

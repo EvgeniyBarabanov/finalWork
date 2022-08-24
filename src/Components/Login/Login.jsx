@@ -50,7 +50,7 @@ function Login() {
     })
 
 	return (
-	    <section className={style.login}>
+	    <section className='login'>
             <div className="container">
 	            <form ref={loginForm} className={style.login__form}>
                     <h2>Выполните вход в ваш личный кабинет</h2>
