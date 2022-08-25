@@ -5,7 +5,7 @@
 .block__login_form{
     font-weight: bold;
     width: 400px;
-    margin: 0 auto;
+    margin: 20px auto 0px auto;
     padding: 40px 30px;
     background-color: #ededed;
     border-radius: 16px;

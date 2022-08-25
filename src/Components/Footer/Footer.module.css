@@ -2,6 +2,36 @@
     margin-top: 50px;
 }
 
+.block_info{
+    background: linear-gradient(90deg, #5B52A3, #40B8EA);
+    border-radius: 36px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    height: 150px;
+    font-size: 20px;
+}
+
+.block_info_link{
+    display: flex;
+    gap: 10px;
+}
+
+.block_info_link>a{
+    border-radius: 100%;
+    opacity: 0.5;
+}
+
+.block_info_link>a:hover{
+    opacity: 1;
+}
+
+.block_info_link img{
+    width: 50px;
+    height: fit-content;
+}
+
 .block ul{
     list-style-type: none;
     font-weight: bold;
@@ -14,12 +44,14 @@
 .block__list{
     width: 95%;
     display: flex;
+    flex-wrap: wrap;
     margin: 70px auto 0 auto;
 }
 
 .block__list>li{
-    flex: 0 0 25%;
+    flex: 0 0 33%;
     padding: 10px;
+    text-align: center;
 }
 
 .block__list a{
@@ -34,6 +66,26 @@
 .block__list_messengers{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.block__list>li:nth-child(1){
+    flex: 0 0 100%;
+    text-align: center;
+}
+
+.block__list_messengers>li:nth-child(1) a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.block__list_messengers li{
+    opacity: 0.5;
+}
+
+.block__list_messengers li:hover{
+    opacity: 1;
 }
 
 .block__list_messengers li:nth-child(1){
@@ -44,6 +96,11 @@
 
 .block__list_messengers li:not(:first-child){
     padding: 0 10px 0 0;
+}
+
+.block__list_messengers span{
+    font-size: 30px;
+    font-weight: bold;
 }
 
 hr{
@@ -64,34 +121,40 @@ hr{
 
 @media(max-width:1024px){
     .block__list>li{
-        flex: 0 0 25%;
+        flex: 0 0 33%;
         padding: 0px;
     }    
 }
 
 @media(max-width:800px){
-    .block__list{
-        flex-wrap: wrap;
+    .block_info{
+        height: 110px;
+    }
+
+    .block_info h3{
+        font-size: 16px;
+    }
+
+    .block_info_link img{
+        width: 40px;
     }
 
     .block__list>li{
-        flex: 0 0 33%;
-        text-align: center;
         font-size: 13px;
     }
 
-    .block__list>li:nth-child(1){
-        flex: 0 0 100%;
-        text-align: center;
-    }
-
     .block__list_messengers{
-        justify-content: center;
         margin-bottom: 20px;
     }
 }
 
 @media(max-width:425px){
+    .block_info{
+        flex-direction: column;
+        padding: 0px 50px;
+        text-align: center;
+    }
+
     .block__list{
         flex-direction: column;
     }
@@ -105,6 +168,14 @@ hr{
 }
 
 @media(max-width:375px){
+    .block_info h3{
+        font-size: 14px;
+    }
+
+    .block_info_link img{
+        width: 30px;
+    }
+
     .block__list{
         margin: 30px auto 0 auto;
     }
