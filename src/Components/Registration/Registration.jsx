@@ -19,6 +19,11 @@ function Registration(){
             pswrd: formData.get('password')
         }
 
+        let regexp = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,15}$/ //логин
+        /* (?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$ */ // пароль минимум 8 символов
+
+        console.log(regexp.test(user.login));
+
         if(user.login.length === 0 || user.phone.length === 0 || user.phone.length === 0){
             emptyField.current.classList.add(style.block__emptyField)
             return;
@@ -33,7 +38,6 @@ function Registration(){
             const userAddTmp = userAdd;
             userAddTmp.push(user);
             setUserAdd([...userAddTmp]);
-            console.log("пользователь добавлен, вы можете войти на свою страницу");
         }
 
     }
