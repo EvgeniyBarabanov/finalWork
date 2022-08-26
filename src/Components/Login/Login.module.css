@@ -19,6 +19,7 @@
 .login__form h2{
     font-size: 24px;
     line-height: 32px;
+    margin-bottom: 35px;
 }
 
 .preventionNone{
@@ -30,12 +31,8 @@
     position: absolute;
     color: red;
     font-size: 13px;
-    width: 300px;
-    top: 115px;
-}
-
-.form__field{
-    margin-top: 40px;
+    top: 100px;
+    width: 90%;
 }
 
 .form__field input{
@@ -118,6 +115,9 @@
     .login__form h2{
         font-size: 20px;
         text-align: center;
+    }
+    .login__form_prevention{
+        top: 85px;
     }
 }
 

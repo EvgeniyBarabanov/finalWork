@@ -54,11 +54,11 @@ function Login() {
             <div className="container">
 	            <form ref={loginForm} className={style.login__form}>
                     <h2>Выполните вход в ваш личный кабинет</h2>
-                    <span ref={preventionNone} className={style.preventionNone} >Такого пользователя не существует, либо введены неверные данные</span>
+                    <p ref={preventionNone} className={style.preventionNone} >Такого пользователя не существует, либо введены неверные данные</p>
 
                     <div className={style.form__field}>
                         <p>Номер телефона:</p>
-                        <input type="tel" name="phone"/>
+                        <input maxLength={13} type="tel" name="phone"/>
                     </div>
 
                     <div className={style.form__field}>

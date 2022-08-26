@@ -29,8 +29,8 @@
 .block__list{
     display: flex;
     list-style-type: none;
-    font-size: 14px;
-    gap: 10px;
+    font-size: 15px;
+    gap: 15px;
 }
 
 .block__list a{
@@ -58,7 +58,7 @@
 
 .block__user{
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .block__user_cart{

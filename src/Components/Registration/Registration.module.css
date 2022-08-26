@@ -2,6 +2,33 @@
     padding: 20px 0;
 }
 
+.none{
+    display: none;
+}
+
+.incorrectLogin,
+.numberRegistered,
+.incorrectPhone,
+.incorrectPassword{
+    display: block;
+    color: red;
+    position: absolute;
+    font-size: 13px;
+}
+
+.incorrectLogin{
+    top: -48px;
+}
+
+.numberRegistered,
+.incorrectPhone{
+    top: -130px;
+}
+
+.incorrectPassword{
+    top: -220px;
+}
+
 .block__login_form{
     font-weight: bold;
     width: 400px;
@@ -14,41 +41,18 @@
 }
 
 .block__login_form>p{
-    margin-top: 10px;
-}
-
-.block__warning{
-    display: block;
-    color: red;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.block__emptyField{
-    display: block;
-    position: absolute;
-    color: red;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.block__emptyField_none{
-    display: none;
-}
-
-.block__warning_none{
-    display: none;
+    margin-top: 12px;
 }
 
 .block__login_form h2{
     font-size: 24px;
     line-height: 32px;
+    margin-bottom: 50px;
 }
 
 .block__login_form_field{
-    margin-top: 30px;
+    margin-top: 20px;
+    position: relative;
 }
 
 .block__login_form_field input{
@@ -105,5 +109,12 @@
 @media(max-width:320px){
     .block__login_form_registrationBtn{
         padding: 15px;
+    }
+
+    .numberRegistered,
+    .incorrectLogin,
+    .incorrectPhone,
+    .incorrectPassword{
+        font-size: 12px;
     }
 }
