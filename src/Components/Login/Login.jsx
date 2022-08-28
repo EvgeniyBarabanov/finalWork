@@ -23,7 +23,6 @@ function Login() {
     const logIn = function(event){
         event.preventDefault();
         const form = new FormData(loginForm.current);
-        console.log(window.location)
         let userStorage = localStorage.getItem('user');
         userStorage = JSON.parse(userStorage);
 

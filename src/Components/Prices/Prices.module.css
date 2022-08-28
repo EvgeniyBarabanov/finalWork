@@ -1,0 +1,492 @@
+.prices__info{
+    background: linear-gradient(90deg, #5B52A3, #40B8EA);
+    border-radius: 36px;
+    height: 150px;
+    color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.prices__info_text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.prices__info_text p{
+    font-size: 13px;
+    line-height: 14px;
+    opacity: 0.7;
+}
+
+.prices__info_text h2{
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.prices__service{
+    display: flex;
+    padding: 0px 100px;
+    margin-top: 50px;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.prices__service_item{
+    width: 25%;
+    padding: 0px 10px;
+}
+
+.prices__service_item_image{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.prices__service_item_image>img{
+    width: 200px;
+}
+
+.prices__service_item_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.prices__service_item_info p{
+    margin: 15px 0px;
+    font-size: 14px;
+}
+
+.prices__service_item_btn>button{
+    border: 0;
+    background-color: #41B7E9;
+    font-weight: bold;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.prices__service_item_btn>button:hover{
+    background-color: #5B52A3;
+}
+
+.prices__stock{
+    margin-top: 40px;
+    padding: 0px 150px;
+}
+
+.prices__stock_wrapper{
+    margin: 20px auto 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prices__stock_item{
+    font-weight: bold;
+    line-height: 60px;
+    margin-top: 15px;
+    display: flex;
+    border-radius: 15px;
+    justify-content: space-between;
+    box-shadow: 5px 5px 5px #ededed,
+                -5px -5px 5px #ededed;
+}
+
+.prices__stock_item:nth-child(-n+6){
+    flex: 0 0 48%;
+    padding: 0px 25px 0px 15px;
+}
+
+.prices__stock_item:nth-child(odd){
+    margin-right: auto;
+}
+
+.prices__stock_item:nth-child(n+7){
+    flex: 0 0 100%;
+    padding: 0px 25px 0px 15px;
+}
+
+.prices__stock_item span{
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+    padding-left: 30px;
+}
+
+.prices__orderNow{
+    background: linear-gradient(90deg, #5B52A3, #40B8EA);
+    border-radius: 36px;
+    height: 350px;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 150px;
+    margin-top: 80px;
+}
+
+.prices__orderNow_image,
+.prices__orderNow_info{
+    display: flex;
+    flex-direction: column;
+}
+
+.prices__orderNow_image{
+    justify-content: center;
+    height: 90%;
+}
+
+.prices__orderNow_image>img{
+    width: auto;
+    height: inherit;
+}
+
+.prices__orderNow_info{
+    align-items: flex-start;
+    margin-left: 40px;
+}
+
+.prices__orderNow_info p{
+    font-size: 14px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center; gap: 5px;
+}
+
+.prices__orderNow_info input{
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 5px 15px;
+    line-height: 20px;
+    width: 50%;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    background: none;
+    color: #fff;
+}
+
+.prices__orderNow_infoBtn{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    gap: 20px;
+}
+
+.prices__orderNow_infoBtn>button{
+    border: 0;
+    background-color: #00C97B;
+    color: #fff;
+    border-radius: 36px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.prices__orderNow_infoBtn  span{
+    font-size: 14px;
+}
+
+.prices__insurance{
+    margin-top: 40px;
+    padding: 0px 150px;
+}
+
+.prices__insurance_wrapper{
+    margin: 20px auto 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prices__insurance_item{
+    padding: 0px 15px;
+    font-weight: bold;
+    flex: 0 0 100%;
+    line-height: 60px;
+    margin-top: 15px;
+    display: flex;
+    border-radius: 15px;
+    justify-content: space-between;
+    box-shadow: 5px 5px 5px #ededed,
+                -5px -5px 5px #ededed;
+}
+
+.prices__insurance_item span{
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+    padding-left: 30px;
+}
+
+.prices__addPack{
+    margin-top: 40px;
+    padding: 0px 150px;
+}
+
+.prices__addPack_wrapper{
+    margin: 20px auto 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.prices__addPack_item{
+    padding: 0px 15px;
+    font-weight: bold;
+    flex: 0 0 48%;
+    line-height: 60px;
+    margin-top: 15px;
+    display: flex;
+    border-radius: 15px;
+    justify-content: space-between;
+    box-shadow: 5px 5px 5px #ededed,
+                -5px -5px 5px #ededed;
+}
+
+.prices__addPack_item:nth-child(odd){
+    margin-right: auto;
+}
+
+.prices__addPack_item p{
+    font-size: 14px;
+}
+
+.prices__addPack_item span{
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+    padding-left: 30px;
+}
+
+@media(max-width:1152px){
+    .prices__service_item_info h3,
+    .prices__service_item_info p{
+        font-size: 15px;
+    }
+
+    .prices__orderNow_infoBtn  span{
+        font-size: 11px;
+    }
+
+    .prices__addPack_item{
+        flex: 0 0 100%;
+    }
+}
+
+@media(max-width:1024px){
+    .prices__info_text h2{
+        font-size: 25px;
+    }
+
+    .prices__service_item_info p{
+        font-size: 14px;
+    }
+
+    .prices__service_item_image>img{
+        width: 150px;
+    }
+
+    .prices__stock_item{
+        font-size: 13px;
+    }
+
+    .prices__orderNow{
+        height: 260px;
+        padding: 0 80px;
+    }
+
+    .prices__orderNow_info h3{
+        font-size: 15px;
+    }
+
+    .prices__orderNow_info p{
+        font-size: 12px;
+    }
+
+    .prices__insurance_item,
+    .prices__addPack_item{
+        font-size: 13px;
+    }
+}
+
+@media(max-width:800px){
+
+    .prices__service{
+        flex-wrap: wrap;
+        padding: 0px 50px;
+    }
+
+    .prices__service_item{
+        width: calc(50% - 5px);
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .prices__stock,
+    .prices__insurance,
+    .prices__addPack{
+        padding: 0px 50px;
+    }
+
+    .prices__orderNow{
+        padding: 0 40px;
+    }
+}
+
+@media(max-width:768px){
+    .prices__service_item_info h3{
+        font-size: 14px;
+    }
+
+    .prices__stock_item:nth-child(-n+6){
+        flex: 0 0 100%;
+    }
+}
+
+@media(max-width:425px){
+    .prices__info_text{
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .prices__service{
+        padding: 0px 50px;
+    }
+
+    .prices__service_item{
+        width: calc(100% - 5px);
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .prices__stock{
+        padding: 0px 10px;
+    }
+
+    .prices__stock_item{
+        line-height: 30px;
+    }
+
+    .prices__stock_item:nth-child(-n+6){
+        padding: 0px 15px 0px 15px;
+    }
+
+    .prices__stock_item:nth-child(n+7){
+        flex: 0 0 100%;
+        padding: 0px 15px 0px 15px;
+    }
+
+    .prices__stock_item span{
+        padding-left: 15px;
+    }
+
+    .prices__orderNow{
+        padding: 20px 40px;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .prices__orderNow_image{
+        align-items: center;
+        height: auto;
+    }
+
+    .prices__orderNow_image>img{
+        width: 50%;
+    }
+
+    .prices__orderNow_info{
+        margin-left: 0px;
+    }
+
+    .prices__orderNow_info h3{
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .prices__orderNow_info input{
+        width: 100%;
+    }
+
+    .prices__insurance{
+        padding: 0px 10px;
+    }
+
+    .prices__insurance_item{
+        line-height: 30px;
+    }
+
+    .prices__insurance_item span{
+        padding-left: 15px;
+    }
+
+    .prices__addPack{
+        padding: 0px 10px;
+    }
+
+    .prices__addPack_item{
+        line-height: 30px;
+    }
+
+    .prices__addPack_item span{
+        padding-left: 15px;
+    }
+}
+
+@media(max-width:375px){
+    .prices__stock_item{
+        text-align: center;
+        font-size: 12px;
+    }
+    
+    .prices__insurance_item{
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .prices__insurance_item p{
+        padding-right: 10px;
+    }
+
+    .prices__insurance_item span{
+        padding-left: 10px;
+    }
+
+    .prices__addPack_item{
+        font-size: 12px;
+    }
+
+    .prices__addPack_item p{
+        text-align: center;
+        font-size: 12px;
+    }
+}
+
+@media(max-width:320px){
+    .prices__info_text h2{
+        font-size: 16px;
+    }
+
+    .prices__stock_item{
+        font-size: 11px;
+    }
+    
+    .prices__insurance_item{
+        text-align: center;
+        font-size: 11px;
+    }
+
+    .prices__insurance_item span{
+        padding-left: 10px;
+    }
+
+    .prices__addPack_item{
+        font-size: 11px;
+    }
+
+    .prices__addPack_item p{
+        margin: 0 auto;
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .prices__addPack_item span{
+        padding-left: 10px;
+    }
+}
