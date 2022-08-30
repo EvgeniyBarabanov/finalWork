@@ -5,7 +5,6 @@ import RulesPay from './RulesPay/RulesPay';
 import Sale from './Sale/Sale';
 import Prices from './Prices/Prices';
 import Help from './Help/Help';
-import Bonuses from './Bonuses/Bonuses';
 import Blog from './Blog/Blog';
 import Login from './Login/Login';
 import Registration from './Registration/Registration';
@@ -28,7 +27,6 @@ function Main() {
 				<Route path='/sale' element={<Sale />} />
 				<Route path='/prices' element={<Prices />} />
 				<Route path='/help' element={<Help />} />
-				<Route path='/bonuses' element={< Bonuses/>} />
 				<Route path='/blog' element={<Blog />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/registration' element={<Registration />} />

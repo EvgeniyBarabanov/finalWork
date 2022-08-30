@@ -12,7 +12,7 @@ function RegSuccess() {
 				</div>
 				<div className={style.block__infoReg}>
 					<p>Регистрация прошла успешно!</p>
-					<span>Вы можете вернуться обратно на главную страницу</span>
+					<span>Теперь мы можете авторизоваться на сайте</span>
 				</div>
 			</div>
 		</div>

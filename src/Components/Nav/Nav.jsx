@@ -50,7 +50,6 @@ function Nav() {
 				<li><Link to="/sale">Распродажи</Link></li>
 				<li><Link to="/prices">Цены</Link></li>
 				<li><Link to="/help">Помощь</Link></li>
-				<li><Link to="/bonuses">Бонусы</Link></li>
 				<li><Link to="/blog">Блог</Link></li>
 			</ul>
 

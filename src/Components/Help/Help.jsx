@@ -28,43 +28,43 @@ function Help() {
 					<h2>Виртуальный адрес в Великобритании</h2>
 					<div className={style.help__question}>
 						<input type="radio" id="question1" name="question_group" />
-  						<label className={style.question_title} for="question1">Что делать, если Вы забыли внести трек номер на сайт, а заказ уже пришел?</label> 
+  						<label className={style.question_title} htmlFor="question1">Что делать, если Вы забыли внести трек номер на сайт, а заказ уже пришел?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question2" name="question_group" />
-  						<label className={style.question_title} for="question2">Как я узнаю что заказ пришел на склад?</label> 
+  						<label className={style.question_title} htmlFor="question2">Как я узнаю что заказ пришел на склад?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question3" name="question_group" />
-  						<label className={style.question_title} for="question3">Покупки на Eбeй / Ebay</label> 
+  						<label className={style.question_title} htmlFor="question3">Покупки на Eбeй / Ebay</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question4" name="question_group" />
-  						<label className={style.question_title} for="question4">Что делать после того, как я выкупил заказ самостоятельно на ваш адресс?</label> 
+  						<label className={style.question_title} htmlFor="question4">Что делать после того, как я выкупил заказ самостоятельно на ваш адресс?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question5" name="question_group" />
-  						<label className={style.question_title} for="question5">Как купить на виртуальный адрес?</label> 
+  						<label className={style.question_title} htmlFor="question5">Как купить на виртуальный адрес?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question6" name="question_group" />
-  						<label className={style.question_title} for="question6">Сколько стоит виртуальный адрес?</label> 
+  						<label className={style.question_title} htmlFor="question6">Сколько стоит виртуальный адрес?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question7" name="question_group" />
-  						<label className={style.question_title} for="question7">Как купить на виртуальный адрес?</label> 
+  						<label className={style.question_title} htmlFor="question7">Как купить на виртуальный адрес?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
@@ -72,43 +72,43 @@ function Help() {
 
 					<div className={style.help__question}>
 						<input type="radio" id="question8" name="question_group" />
-  						<label className={style.question_title} for="question8">Анонс скидочныx купонов и промкодов</label> 
+  						<label className={style.question_title} htmlFor="question8">Анонс скидочныx купонов и промкодов</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 					
 					<div className={style.help__question}>
 						<input type="radio" id="question9" name="question_group" />
-  						<label className={style.question_title} for="question9">Как узнать пришел ли заказ полностью?</label> 
+  						<label className={style.question_title} htmlFor="question9">Как узнать пришел ли заказ полностью?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question10" name="question_group" />
-  						<label className={style.question_title} for="question10">Как узнать что заказ пришел на склад?</label> 
+  						<label className={style.question_title} htmlFor="question10">Как узнать что заказ пришел на склад?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question11" name="question_group" />
-  						<label className={style.question_title} for="question11">Что такое выкуп в компашке?</label> 
+  						<label className={style.question_title} htmlFor="question11">Что такое выкуп в компашке?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question12" name="question_group" />
-  						<label className={style.question_title} for="question12">Как понять, что заказ куплен?</label> 
+  						<label className={style.question_title} htmlFor="question12">Как понять, что заказ куплен?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question13" name="question_group" />
-  						<label className={style.question_title} for="question13">Можно ли купить с частичной предоплатой?</label> 
+  						<label className={style.question_title} htmlFor="question13">Можно ли купить с частичной предоплатой?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question14" name="question_group" />
-  						<label className={style.question_title} for="question14">Что такое обычный заказ?</label> 
+  						<label className={style.question_title} htmlFor="question14">Что такое обычный заказ?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
@@ -116,37 +116,37 @@ function Help() {
 
 					<div className={style.help__question}>
 						<input type="radio" id="question15" name="question_group" />
-  						<label className={style.question_title} for="question15">Как часто вы отправляете посылки в россию?</label> 
+  						<label className={style.question_title} htmlFor="question15">Как часто вы отправляете посылки в россию?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question16" name="question_group" />
-  						<label className={style.question_title} for="question16">Возможно ли доставка в страны, не указанные на сайте?</label> 
+  						<label className={style.question_title} htmlFor="question16">Возможно ли доставка в страны, не указанные на сайте?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question17" name="question_group" />
-  						<label className={style.question_title} for="question17">Сколько стоит доставка в Казаxстан и другие страны Азии, какие сроки?</label> 
+  						<label className={style.question_title} htmlFor="question17">Сколько стоит доставка в Казаxстан и другие страны Азии, какие сроки?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 					
 					<div className={style.help__question}>
 						<input type="radio" id="question18" name="question_group" />
-  						<label className={style.question_title} for="question18">Как дешевле всего отправить маленькую посылку в Россию?</label> 
+  						<label className={style.question_title} htmlFor="question18">Как дешевле всего отправить маленькую посылку в Россию?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question19" name="question_group" />
-  						<label className={style.question_title} for="question19">Какая стоимость и сроки доставки из Англии в Россию?</label> 
+  						<label className={style.question_title} htmlFor="question19">Какая стоимость и сроки доставки из Англии в Россию?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question20" name="question_group" />
-  						<label className={style.question_title} for="question20">Что такое обычный заказ?</label> 
+  						<label className={style.question_title} htmlFor="question20">Что такое обычный заказ?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
@@ -154,19 +154,19 @@ function Help() {
 
 					<div className={style.help__question}>
 						<input type="radio" id="question21" name="question_group" />
-  						<label className={style.question_title} for="question21">Где найти реквизиты для оплаты? и как оплатить?</label> 
+  						<label className={style.question_title} htmlFor="question21">Где найти реквизиты для оплаты? и как оплатить?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question22" name="question_group" />
-  						<label className={style.question_title} for="question22">Как оплатить через пайпал?</label> 
+  						<label className={style.question_title} htmlFor="question22">Как оплатить через пайпал?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question23" name="question_group" />
-  						<label className={style.question_title} for="question23">Какие способы оплаты вы принимаете из России?</label> 
+  						<label className={style.question_title} htmlFor="question23">Какие способы оплаты вы принимаете из России?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
@@ -174,43 +174,43 @@ function Help() {
 
 					<div className={style.help__question}>
 						<input type="radio" id="question24" name="question_group" />
-  						<label className={style.question_title} for="question24">Какой ваш Емайл? Как с вами Связаться ? Какой график работы?</label> 
+  						<label className={style.question_title} htmlFor="question24">Какой ваш Емайл? Как с вами Связаться ? Какой график работы?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question25" name="question_group" />
-  						<label className={style.question_title} for="question25">Я xочу разделить заказ на несколько получателей, как это сделать и сколько стоит?</label> 
+  						<label className={style.question_title} htmlFor="question25">Я xочу разделить заказ на несколько получателей, как это сделать и сколько стоит?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question26" name="question_group" />
-  						<label className={style.question_title} for="question26">Купил на Ebay, продавец не отправляет заказ, нужен самовывоз. Сколько стоит и как оформить?</label> 
+  						<label className={style.question_title} htmlFor="question26">Купил на Ebay, продавец не отправляет заказ, нужен самовывоз. Сколько стоит и как оформить?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question27" name="question_group" />
-  						<label className={style.question_title} for="question27">Сколько стоит удаления вешалок и коробок?</label> 
+  						<label className={style.question_title} htmlFor="question27">Сколько стоит удаления вешалок и коробок?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question28" name="question_group" />
-  						<label className={style.question_title} for="question28">Какой срок бесплатного xранения?</label> 
+  						<label className={style.question_title} htmlFor="question28">Какой срок бесплатного xранения?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question29" name="question_group" />
-  						<label className={style.question_title} for="question29">Сколько стоит консолидация?</label> 
+  						<label className={style.question_title} htmlFor="question29">Сколько стоит консолидация?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question30" name="question_group" />
-  						<label className={style.question_title} for="question30">Как расчитать стоимость услуг и доставки?</label> 
+  						<label className={style.question_title} htmlFor="question30">Как расчитать стоимость услуг и доставки?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
@@ -218,37 +218,37 @@ function Help() {
 
 					<div className={style.help__question}>
 						<input type="radio" id="question31" name="question_group" />
-  						<label className={style.question_title} for="question31">Как отследить посылку, отправленную почтой России?</label> 
+  						<label className={style.question_title} htmlFor="question31">Как отследить посылку, отправленную почтой России?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question32" name="question_group" />
-  						<label className={style.question_title} for="question32">Где найти трек номер на отправленную вами посылку?</label> 
+  						<label className={style.question_title} htmlFor="question32">Где найти трек номер на отправленную вами посылку?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question33" name="question_group" />
-  						<label className={style.question_title} for="question33">Что такое адресная книга? Зачем ее заполнять, если адрес есть в моем профайле?</label> 
+  						<label className={style.question_title} htmlFor="question33">Что такое адресная книга? Зачем ее заполнять, если адрес есть в моем профайле?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question34" name="question_group" />
-  						<label className={style.question_title} for="question34">Как заполнить декларацию, зачем ее заполнять, если лимит не превышен?</label> 
+  						<label className={style.question_title} htmlFor="question34">Как заполнить декларацию, зачем ее заполнять, если лимит не превышен?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question35" name="question_group" />
-  						<label className={style.question_title} for="question35">Как отправить посылку? Как сделать запрос? Сколько это стоит?</label> 
+  						<label className={style.question_title} htmlFor="question35">Как отправить посылку? Как сделать запрос? Сколько это стоит?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 
 					<div className={style.help__question}>
 						<input type="radio" id="question36" name="question_group" />
-  						<label className={style.question_title} for="question36">Как отправить несколько заказов в одной посылке? Сколько это стоит?</label> 
+  						<label className={style.question_title} htmlFor="question36">Как отправить несколько заказов в одной посылке? Сколько это стоит?</label> 
   						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda atque reiciendis accusantium numquam nostrum tenetur eaque, aliquam optio cupiditate ipsum, ducimus eum architecto. Voluptates corrupti adipisci vero doloremque! Eum, rerum?</p> 
 					</div>
 				</div>		

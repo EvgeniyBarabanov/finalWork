@@ -11,7 +11,7 @@
 .prices__info_text{
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
+    margin-left:200px;
 }
 
 .prices__info_text p{
@@ -306,6 +306,10 @@
 }
 
 @media(max-width:800px){
+
+    .prices__info_text{
+        margin: 0 auto;
+    }
 
     .prices__service{
         flex-wrap: wrap;

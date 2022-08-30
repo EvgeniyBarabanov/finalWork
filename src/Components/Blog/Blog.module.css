@@ -1,0 +1,147 @@
+.blog__info{
+    background: linear-gradient(90deg, #5B52A3, #40B8EA);
+    border-radius: 36px;
+    height: 150px;
+    color: #fff;
+    display: flex;
+    
+}
+
+.blog__info_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 200px;
+}
+
+.blog__info_text p{
+    font-size: 13px;
+    line-height: 14px;
+    opacity: 0.7;
+}
+
+.blog__info_text h2{
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.blog__articles{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto 0px auto;
+}
+
+.blog__articles_item{
+    color: black;
+    text-decoration: none;
+    flex: 0 0 33.3%;
+    padding: 0px 20px;
+    margin-top: 30px;
+}
+
+.blog__articles_item_wrapper h3{
+    padding: 0px 10px;
+}
+
+.blog__articles_item_wrapper>img{
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.blog__articles_item_time{
+    display: flex;
+    margin-top: 40px;
+    padding: 0px 10px;
+}
+
+.blog__articles_item_time>img{
+    display: block;
+    margin-left: auto;
+}
+
+.blog__store_slider{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.blog__store_slider>button{
+    width: 60px;
+    height: 60px;
+    border: 2px solid #01CD7D;
+    opacity: 0.5;
+    border-radius: 100%;
+    cursor: pointer;
+    background: none;
+    font-size: 20px;
+    color :#01CD7D;
+}
+
+.blog__store_slider>button:hover,
+.blog__store_slider>button:nth-child(2){
+    background-color: #ededed;
+    opacity: 1;
+}
+
+@media(max-width:1152px){
+    .blog__articles_item_wrapper h3{
+        padding: 0px;
+    }
+}
+
+@media(max-width:1024px){
+    .blog__articles_item_wrapper h3{
+        font-size: 15px;
+    }
+
+    .blog__articles_item_time{
+        font-size: 13px;
+        padding: 0px;
+    }
+}
+
+@media(max-width:800px){
+    .blog__articles_item{
+        padding: 0px 7px;
+    }
+
+    .blog__articles_item_wrapper h3{
+        font-size: 14px;
+    }
+
+    .blog__store_slider>button{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media(max-width:768px){
+    .blog__articles_item{
+        flex: 0 0 50%;
+        padding: 0px 15px;
+    }
+}
+
+@media(max-width:425px){
+    .blog__info_text{
+        margin:0 auto
+    }
+
+    .blog__articles_item{
+        flex: 0 0 100%;
+    }
+
+    .blog__store_slider>button{
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .blog__store_slider>button img{
+        width: 15px;
+        height: 10px;
+    }
+}
