@@ -59,9 +59,21 @@ function SelectCategory(props) {
 	}
 
 
-	/* useEffect(()=>{
-		test()
-	}) */
+	const showButtom = function(id){
+		console.log(cartChecked)
+		if(cartChecked.filter((currentId)=>{
+			return currentId == id
+		}).length > 0){
+			return (
+				<button onClick={()=>{
+				}} className={style.sliderProduct__addToCart}>Добавлено</button>
+			)
+		}else{
+			return (
+				<button onClick={addToCart} className={style.sliderProduct__addToCart}>Добавить в корзину</button>
+			)
+		}
+	}
 
 	return (
 		<div className="selectCategory">
@@ -86,13 +98,13 @@ function SelectCategory(props) {
 																<p>{item.price + "$"}</p>
 															</div>
 															<div className={style.sliderProduct__item_info_rating}>
-																<div style={{background: `linear-gradient(90deg, GreenYellow ${item.rating/0.05}%, #ffffff 0%`}} className={style.images_mask}></div>
+																<div style={{background: `linear-gradient(90deg, #00C97B ${item.rating/0.05}%, #ffffff 0%`}} className={style.images_mask}></div>
 																<img className={style.sliderProduct_item_info_stars} style={{backgroundColor: 'transparent'}} src={PUBLIC_URL + '/images/stars.png'} alt="#" />
 															</div>
 															<div className={style.sliderProduct__item_info_description}>
 																<p>{item.description}</p>
 															</div>
-															<button onClick={addToCart} className={style.sliderProduct__addToCart}>Добавить в корзину</button>
+															{showButtom(item.id) }
 														</div>
 													</div>
 												</div>

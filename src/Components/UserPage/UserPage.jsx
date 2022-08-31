@@ -10,7 +10,7 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function UserPage(){
     
-    const [dateNow, setDateNow] = useState(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    const [dateNow, setDateNow] = useState(moment().format('MMMM Do YYYY'));
     const [data, setData] = useState([])
 
     const logOut = function () {
@@ -52,7 +52,7 @@ function UserPage(){
                         <div className={style.block__menu_wrapper}>
                             <div className={style.block__menu_currentTime}>
                                 <img src={PUBLIC_URL + '/images/clock_icon.png'} alt="#" />
-                                <span>{dateNow}</span>
+                                <p>{dateNow}</p>
                             </div>
                             <div className={style.block__menu_exchangeRates}>
                                 <button><img src={PUBLIC_URL + '/images/bank_icon.png'} alt="#" />Курс валют</button>
@@ -76,7 +76,7 @@ function UserPage(){
                 <div className="container">
                     <div className={style.personal__information_wrapper}>
                         <div className={style.personal__information_logo}>
-                            <img src="https://via.placeholder.com/150" alt="#" />
+                            <img src="https://via.placeholder.com/200" alt="#" />
                         </div>
                         {data.map((item,index)=>{
                             return(
@@ -91,7 +91,7 @@ function UserPage(){
                                     </div>
                                 </div>
                             )
-                        })};
+                        })}
                         <div className={style.block__logOut}>
                             <button onClick={logOut}>Выход из аккаунта</button>
                         </div>

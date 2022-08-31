@@ -55,18 +55,17 @@ function Cart(){
                                 <button><img src={PUBLIC_URL + '/images/filter_logo.png'} alt="#" /></button>
                             </div>
                         </div>
-                        <table className={style.cart__table}>
+                        <div className={style.cart__table_wrapper}>
+                            <table className={style.cart__table}>
                             <thead>
                                 <tr>
-                                    {/* <th>Дата</th> */}
-                                    <th>Id заказа</th>
-                                    <th>Наименование</th>
-                                    <th>Бренд</th>
-                                    <th>Категория</th>
-                                    <th>Цена</th>
-                                    <th>Скидка</th>
-                                    <th>Рейтинг</th>
-                                    <th>Количество</th>
+                                    <th><button>Id заказа <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
+                                    <th><button>Наименование <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
+                                    <th><button>Бренд <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
+                                    <th><button>Категория <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
+                                    <th><button>Цена <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
+                                    <th><button>Скидка <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
+                                    <th><button>Рейтинг <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -77,18 +76,15 @@ function Cart(){
                                             <td>{item.title}</td>
                                             <td>{item.brand}</td>
                                             <td>{item.category}</td>
-                                            <td>{item.price}</td>
-                                            <td>{item.discountPercentage}</td>
+                                            <td>{item.price} $</td>
+                                            <td>{item.discountPercentage} %</td>
                                             <td>{item.rating}</td>
-                                            <td>
-                                                <button>-</button>
-                                                <button>+</button>    
-                                            </td>
                                         </tr>
                                     )
                                 })}
                             </tbody>
-                        </table>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </section>
