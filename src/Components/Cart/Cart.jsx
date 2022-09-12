@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+
 import style from './Cart.module.css'
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
@@ -6,6 +7,8 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 const getCookie = require('../GetCookie');
 
 function Cart(){
+
+    //ВЫВОДИТЬ КОРЗИНУ ТОВАРОВ НЕ ИЗ КУКИ, А ИЗ ЛОКАЛЬНОГО ХРАНИЛИЩА ПОЛЬЗОВАТЕЛЯ, если пользователь новый, у него в лок хранилище есть товары, присвоить значение куки(id) значение ident аутентифицированного пользователя//
 
     const [arrProduct, setProductArr] = useState([])
 
@@ -40,7 +43,7 @@ function Cart(){
                     <div className={style.cart__wrapper}>
                         <div className={style.cart__info}>
                             <h2>Заказы пользователя {getCookie('authLogin')}</h2>
-                            <button>Добавить новый заказ</button>
+                            <a href='/'><button>Добавить новый заказ</button></a>
                         </div>
                         <div className={style.cart__search}>
                             <div className={style.cart__searchOrderBtn}>
@@ -70,6 +73,7 @@ function Cart(){
                             </thead>
                             <tbody>
                                 {arrProduct.map((item,index)=>{
+                                    console.log(arrProduct);
                                     return(
                                         <tr key={index}>
                                             <td>{item.id}</td>

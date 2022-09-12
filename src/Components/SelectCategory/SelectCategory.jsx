@@ -43,7 +43,24 @@ function SelectCategory(props) {
 	const addToCart = function(){
 		let currentProduct = direction.current.firstChild.nextSibling;
 		let idProduct = [currentProduct.id];
-		if(!getCookie("id")){
+
+
+		let test = localStorage.getItem('user');
+		test = JSON.parse(test);
+		test.map((item)=>{
+			if(item.phone === getCookie('authPhone')){
+				if(item.ident === undefined){
+					item.ident = idProduct;
+				}else if(item.ident !== undefined){
+					console.log(item.ident);
+				}
+			}
+		})
+		test = JSON.stringify(test);
+		localStorage.setItem('user', test);
+
+
+		/* if(!getCookie("id")){
 			document.cookie = 'id=' + currentProduct.id + '; max-age=1800';
 			setCartChecked([...idProduct]);
 		}else{
@@ -55,12 +72,17 @@ function SelectCategory(props) {
 				document.cookie = 'id=' + arr + '; max-age=1800';
 				setCartChecked([...arr]);
 			}
-		}
+		} */
+
 	}
 
 
 	const showButtom = function(id){
-		console.log(cartChecked)
+		if(!getCookie("auth")){
+			return(
+				<button className={style.sliderProduct__addToCart}>Для добавления в корзину авторизуйтесь</button>
+			)
+		}
 		if(cartChecked.filter((currentId)=>{
 			return currentId == id
 		}).length > 0){

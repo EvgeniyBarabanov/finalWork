@@ -19,6 +19,7 @@ function UserPage(){
         document.cookie = 'auth=; max-age=-1';
         document.cookie = 'authLogin=; max-age=-1';
         document.cookie = 'authPhone=; max-age=-1';
+        document.cookie = 'id=; max-age=-1';
 
         if(!getCookie('auth')) window.location.reload();
     }
