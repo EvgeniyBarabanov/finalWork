@@ -2,39 +2,65 @@ import { useState, useEffect } from 'react';
 
 import style from './Cart.module.css'
 
-const PUBLIC_URL = process.env.PUBLIC_URL;
-
 const getCookie = require('../GetCookie');
+
+const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Cart(){
 
-    //ВЫВОДИТЬ КОРЗИНУ ТОВАРОВ НЕ ИЗ КУКИ, А ИЗ ЛОКАЛЬНОГО ХРАНИЛИЩА ПОЛЬЗОВАТЕЛЯ, если пользователь новый, у него в лок хранилище есть товары, присвоить значение куки(id) значение ident аутентифицированного пользователя//
-
     const [arrProduct, setProductArr] = useState([])
+    const [flag, setFlag] = useState(true)
+
 
     const cart = function(){
-        if(!getCookie('id')){
-            return;
-        }
-
         let localElem = localStorage.getItem('storage');
         localElem = JSON.parse(localElem);
 
-        let productId = getCookie('id').split(',').map(Number);
-        if(arrProduct.length === 0){
-            let arrProductTmp = arrProduct;
-            localElem.products.map((item)=>{
-                if(productId.includes(item.id)){
-                    arrProductTmp.push(item); 
+        let userCart = localStorage.getItem('user');
+		userCart = JSON.parse(userCart);
+
+		userCart.map((item)=>{
+			if(item.phone === getCookie('authPhone')){
+                let productId = item.ident;
+                if(arrProduct.length === 0 && productId !== undefined){
+                    let arrProductTmp = arrProduct;
+                    localElem.products.map((product)=>{
+                        if(productId.includes( String(product.id))){
+                            arrProductTmp.push(product); 
+                        }
+                        setProductArr([...arrProductTmp])
+                    })
+                }else{
+                    return;
                 }
-                setProductArr([...arrProductTmp])
-            })
-        }
+            }
+        })
     }
 
     useEffect(()=>{
         cart();
     },[arrProduct])
+
+    const sortPrice = function (event) {
+        let arrProductTmp = arrProduct;
+        function sortByPrices(arr, flag){
+            let cellTableName = event.target.id;
+
+		    if(cellTableName === ''){
+			    cellTableName = event.target.parentNode.id
+		    }
+
+            if(flag === true){
+                arr.sort((a,b)=> a[cellTableName] > b[cellTableName] ? 1 : -1);
+                setFlag(false);
+            }else{
+                arr.sort((a,b)=> a[cellTableName] > b[cellTableName] ? -1 : 1);
+                setFlag(true);
+            }
+        }
+        sortByPrices(arrProductTmp, flag);
+        setProductArr([...arrProductTmp])
+    }
 
     return(
         <div>
@@ -62,18 +88,17 @@ function Cart(){
                             <table className={style.cart__table}>
                             <thead>
                                 <tr>
-                                    <th><button>Id заказа <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
-                                    <th><button>Наименование <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
-                                    <th><button>Бренд <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
-                                    <th><button>Категория <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
-                                    <th><button>Цена <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
-                                    <th><button>Скидка <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
-                                    <th><button>Рейтинг <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
+                                    <th>Id заказа</th>
+                                    <th>Наименование</th>
+                                    <th>Бренд</th>
+                                    <th>Категория</th>
+                                    <th><button id='price' onClick={sortPrice}>Цена <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
+                                    <th><button id='discountPercentage' onClick={sortPrice}>Скидка <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
+                                    <th><button id='rating' onClick={sortPrice}>Рейтинг <img src={PUBLIC_URL + '/images/arrowDown.png'} alt="#" /></button></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {arrProduct.map((item,index)=>{
-                                    console.log(arrProduct);
                                     return(
                                         <tr key={index}>
                                             <td>{item.id}</td>

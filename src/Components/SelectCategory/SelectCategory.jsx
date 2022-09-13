@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useContext, useRef } from 'react';
+import { useState, useContext, useRef } from 'react';
 import { MainContext } from '../Dashboard/Dashboard';
 
 import style from './SelectCategory.module.css';
@@ -45,39 +43,39 @@ function SelectCategory(props) {
 		let idProduct = [currentProduct.id];
 
 
-		let test = localStorage.getItem('user');
-		test = JSON.parse(test);
-		test.map((item)=>{
+		let userCart = localStorage.getItem('user');
+		userCart = JSON.parse(userCart);
+		userCart.map((item)=>{
 			if(item.phone === getCookie('authPhone')){
 				if(item.ident === undefined){
 					item.ident = idProduct;
+					setCartChecked([...idProduct])
 				}else if(item.ident !== undefined){
-					console.log(item.ident);
+					if(item.ident.includes(currentProduct.id)){
+						return;
+					}else{
+						item.ident.push(currentProduct.id);
+						setCartChecked([...item.ident])
+					}
 				}
 			}
 		})
-		test = JSON.stringify(test);
-		localStorage.setItem('user', test);
-
-
-		/* if(!getCookie("id")){
-			document.cookie = 'id=' + currentProduct.id + '; max-age=1800';
-			setCartChecked([...idProduct]);
-		}else{
-			let arr = (getCookie("id").match(/\d+/g));
-			if(arr.includes(currentProduct.id)){
-				return;
-			}else{
-				arr.push(currentProduct.id);
-				document.cookie = 'id=' + arr + '; max-age=1800';
-				setCartChecked([...arr]);
-			}
-		} */
-
+		userCart = JSON.stringify(userCart);
+		localStorage.setItem('user', userCart);
 	}
 
-
 	const showButtom = function(id){
+		let userCart = localStorage.getItem('user');
+		userCart = JSON.parse(userCart);
+
+		userCart.map((item)=>{
+			if(item.phone === getCookie('authPhone')){
+				if(cartChecked.length === 0 && item.ident !== undefined){
+					setCartChecked([...item.ident])
+				}
+			}
+		})
+
 		if(!getCookie("auth")){
 			return(
 				<button className={style.sliderProduct__addToCart}>Для добавления в корзину авторизуйтесь</button>

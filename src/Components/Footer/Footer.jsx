@@ -1,6 +1,5 @@
 import style from './Footer.module.css';
 
-
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 function Footer(){

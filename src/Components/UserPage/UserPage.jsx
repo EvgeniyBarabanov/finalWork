@@ -7,7 +7,6 @@ const getCookie = require('../GetCookie');
 
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
-
 function UserPage(){
     
     const [dateNow, setDateNow] = useState(moment().format('MMMM Do YYYY'));
@@ -42,7 +41,6 @@ function UserPage(){
     
     useEffect(()=>{
         userData();
-        
     })
 
     return(

@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import style from './Login.module.css';
@@ -17,8 +16,6 @@ function Login() {
     const preventDefault = function(event){
         event.preventDefault();
     }
-
-    
     
     const logIn = function(event){
         event.preventDefault();

@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import style from './Registration.module.css';
 
 function Registration(){
@@ -11,8 +12,6 @@ function Registration(){
     const incorrectPhone = useRef();
     const numberRegistered = useRef();
     const incorrectPassword = useRef();
-
-
     const [userAdd, setUserAdd] = useState([]);
 
     const addUsers = function(event){

@@ -13,7 +13,6 @@ function Dashboard() {
 
 	const transform = useRef();
 	
-
 	const getData = function(){
 		if(localStorage.getItem('storage')){
 			if(allProducts.products.length === 0){
@@ -48,17 +47,9 @@ function Dashboard() {
 		if(dir === "next"){
 			let firstChild = transform.current.firstChild;
 			transform.current.append(firstChild);
-			/* for (let child of transform.current.children){
-				child.classList.remove(style.prewSlide);
-				child.classList.add(style.nextSlide);
-			} */
 		}else{
 			let lastChild = transform.current.lastChild;
 			transform.current.prepend(lastChild);
-			/* for (let child of transform.current.children){
-				child.classList.remove(style.nextSlide);
-				child.classList.add(style.prewSlide)
-			} */
 		}
 	}
 
